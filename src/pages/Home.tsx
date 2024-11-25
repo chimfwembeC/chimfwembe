@@ -119,7 +119,7 @@ export default function Home() {
                 </a>
                 <div className="flex gap-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/chimfwembeC"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-white rounded-xl shadow-sm hover:text-indigo-600 transition-colors"
@@ -127,7 +127,7 @@ export default function Home() {
                     <Github className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/chimfwembe-kangwa-60098127b"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-white rounded-xl shadow-sm hover:text-indigo-600 transition-colors"
