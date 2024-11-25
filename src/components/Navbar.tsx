@@ -22,7 +22,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
               <Code2 className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>
+              <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>
+              <span className="block lg:hidden ml-2 text-xl font-bold gradient-text">CK</span>
             </Link>
             
             <div className="hidden md:block">
