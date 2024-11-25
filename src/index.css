@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-50;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-indigo-50;
+  }
+  
+  .section-title {
+    @apply text-4xl font-bold text-gray-900 mb-12 text-center gradient-text;
+  }
+}
