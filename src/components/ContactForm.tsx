@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, User } from 'lucide-react';
+import { Mail, MessageSquare, User, Phone, Home } from 'lucide-react'; // Import new icons
 import emailjs from 'emailjs-com';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ from_name: '', from_email: '', message: '' });
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    from_phone: '',
+    from_address: '',
+    message: ''
+  });
   const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    message: ''
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -14,10 +26,12 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const newErrors = { name: '', email: '', message: '' };
+    const newErrors = { name: '', email: '', phone: '', address: '', message: '' };
 
     if (!formData.from_name) newErrors.name = 'Name is required';
     if (!formData.from_email) newErrors.email = 'Email is required';
+    if (!formData.from_phone) newErrors.phone = 'Phone number is required';
+    // if (!formData.from_address) newErrors.address = 'Address is required';
     if (!formData.message) newErrors.message = 'Message is required';
 
     if (Object.values(newErrors).some(error => error)) {
@@ -32,13 +46,15 @@ export default function ContactForm() {
         {
           from_name: formData.from_name,
           from_email: formData.from_email,
+          from_phone: formData.from_phone,
+          from_address: formData.from_address,
           message: formData.message,
         },
         'gbLJpaHGf1Ak1KEGI' // Public Key
       );
       setSubmitted(true);
-      setFormData({ from_name: '', from_email: '', message: '' });
-      setErrors({ name: '', email: '', message: '' });
+      setFormData({ from_name: '', from_email: '', from_phone: '', from_address: '', message: '' });
+      setErrors({ name: '', email: '', phone: '', address: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
     }
@@ -87,6 +103,42 @@ export default function ContactForm() {
               placeholder="john@example.com"
             />
             {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="phone" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+              <Phone className="h-4 w-4" />
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="from_phone"
+              value={formData.from_phone}
+              onChange={handleChange}
+              required
+              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              placeholder="123-456-7890"
+            />
+            {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="address" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+              <Home className="h-4 w-4" />
+              Address
+            </label>
+            <input
+              type="text"
+              id="address"
+              name="from_address"
+              value={formData.from_address}
+              onChange={handleChange}
+              required
+              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              placeholder="123 Main St"
+            />
+            {errors.address && <p className="text-sm text-red-600">{errors.address}</p>}
           </div>
 
           <div>
