@@ -8,12 +8,13 @@ import {
   Cloud,
   Download,
   ArrowRight,
+  ComputerIcon,
 } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
 import ExperienceCard from '../components/ExperienceCard';
 import DeveloperImage from '../components/assets/images/developer.png';
-
+import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
 
 const projects = [
   {
@@ -44,26 +45,43 @@ const projects = [
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Innovations Inc.',
-    period: 'Jan 2022 - Present',
+    title: 'Junior Full Stack Developer',
+    company: 'Kamstar.tech',
+    period: 'Jan 2024 - Present',
+    website: 'https://kamstar.tech',
+    type: 'Remote',
     description: [
-      'Led development of microservices architecture serving 1M+ users',
-      'Implemented CI/CD pipelines reducing deployment time by 60%',
-      'Mentored junior developers and conducted code reviews',
+      'Currently working as a full-stack developer using Laravel and React with Inertia.js and Vue.js.',
+      'Spearheading both front-end and back-end development to ensure scalable and high-performing web applications.',
+      'Implemented several features and optimizations across multiple projects.',
     ],
-    technologies: ['React', 'Node.js', 'AWS', 'Docker', 'MongoDB'],
+    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel','PHP','REST APIs','Graphql'],
   },
   {
-    title: 'Full Stack Developer',
-    company: 'Digital Solutions Ltd',
-    period: 'Mar 2020 - Dec 2021',
+    title: 'Intern Stack Developer',
+    company: 'Probase Zambia',
+    period: 'Feb 2024 - April 2024',
+    website: 'https://probasegroup.com',
+    type: 'Internship',
     description: [
-      'Developed and maintained multiple client-facing applications',
-      'Optimized database queries improving performance by 40%',
-      'Integrated third-party APIs and payment gateways',
+      'Managed database operations and gained insights into large-scale software systems.',
+      'Worked with dynamic team',
+      'Gained insight on third-party APIs and payment gateways',
     ],
-    technologies: ['Vue.js', 'Python', 'PostgreSQL', 'Redis', 'REST APIs'],
+    technologies: ['Laravel', 'PHP','REST APIs'],
+  },
+  {
+    title: 'Intern Software Tester',
+    company: 'Nikkle.io',
+    period: 'Sept 2023 - Jan 2024',
+    website: 'https://nikkle.io',
+    type: 'Remote (Internship)',
+    description: [
+      'Conducted extensive system testing to ensure application stability and reliability, both manuel and automated tests.',
+      'Worked with Laravel and Bootstrap for both front-end and back-end development testing.',
+      'Collaborated with developers to identify bugs, ensuring smooth releases.',
+    ],
+    technologies: ['Laravel', 'PHP','Bootstrap','Cypress', 'Manuel Tests'],
   },
 ];
 
@@ -71,12 +89,12 @@ const skillCategories = [
   {
     title: 'Frontend Development',
     Icon: Globe,
-    skills: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS', 'Next.js', 'Redux'],
+    skills: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS','Bootstrap','Css', 'Next.js', 'Redux'],
   },
   {
     title: 'Backend Development',
     Icon: Server,
-    skills: ['Node.js', 'Python', 'Java', 'Express', 'GraphQL', 'REST APIs'],
+    skills: ['Node.js', 'Python', 'Express', 'GraphQL', 'REST APIs'],
   },
   {
     title: 'Mobile Development',
@@ -88,7 +106,13 @@ const skillCategories = [
     Icon: Cloud,
     skills: ['PostgreSQL', 'MongoDB', 'AWS', 'Firebase', 'Docker', 'Kubernetes'],
   },
+  {
+    title: 'Desktop Development',
+    Icon: ComputerIcon, // Use an appropriate icon for desktop apps
+    skills: ['Electron.js'],
+  },
 ];
+
 
 export default function Home() {
   return (
@@ -135,7 +159,7 @@ export default function Home() {
                     <Linkedin className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://twitter.com"
+                    href="https://x.com/CharlesK83179"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-white rounded-xl shadow-sm hover:text-indigo-600 transition-colors"
@@ -151,8 +175,8 @@ export default function Home() {
         className="w-full h-auto"
       /> */}
             <div className="relative">
-              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div>
+              <div className="relative h-[600px] rounded-2xl">
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div> */}
                 <img
                   src={DeveloperImage}
                   alt="Developer"
@@ -208,8 +232,8 @@ export default function Home() {
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Get a detailed overview of my experience, skills, and qualifications.
           </p>
-          <a
-            href="/resume.pdf"
+          <a          
+            href={CV}
             download
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors"
           >

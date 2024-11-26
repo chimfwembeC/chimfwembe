@@ -3,28 +3,46 @@ import ExperienceCard from '../components/ExperienceCard';
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Innovations Inc.',
-    period: 'Jan 2022 - Present',
+    title: 'Junior Full Stack Developer',
+    company: 'Kamstar.tech',
+    period: 'Jan 2024 - Present',
+    website: 'https://kamstar.tech',
+    type: 'Remote',
     description: [
-      'Led development of microservices architecture serving 1M+ users',
-      'Implemented CI/CD pipelines reducing deployment time by 60%',
-      'Mentored junior developers and conducted code reviews',
+      'Currently working as a full-stack developer using Laravel and React with Inertia.js and Vue.js.',
+      'Spearheading both front-end and back-end development to ensure scalable and high-performing web applications.',
+      'Implemented several features and optimizations across multiple projects.',
     ],
-    technologies: ['React', 'Node.js', 'AWS', 'Docker', 'MongoDB'],
+    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel','PHP','REST APIs','Graphql'],
   },
   {
-    title: 'Full Stack Developer',
-    company: 'Digital Solutions Ltd',
-    period: 'Mar 2020 - Dec 2021',
+    title: 'Intern Stack Developer',
+    company: 'Probase Zambia',
+    period: 'Feb 2024 - April 2024',
+    website: 'https://probasegroup.com',
+    type: 'Internship',
     description: [
-      'Developed and maintained multiple client-facing applications',
-      'Optimized database queries improving performance by 40%',
-      'Integrated third-party APIs and payment gateways',
+      'Managed database operations and gained insights into large-scale software systems.',
+      'Worked with dynamic team',
+      'Gained insight on third-party APIs and payment gateways',
     ],
-    technologies: ['Vue.js', 'Python', 'PostgreSQL', 'Redis', 'REST APIs'],
+    technologies: ['Laravel', 'PHP','REST APIs'],
+  },
+  {
+    title: 'Intern Software Tester',
+    company: 'Nikkle.io',
+    period: 'Sept 2023 - Jan 2024',
+    website: 'https://nikkle.io',
+    type: 'Remote (Internship)',
+    description: [
+      'Conducted extensive system testing to ensure application stability and reliability, both manuel and automated tests.',
+      'Worked with Laravel and Bootstrap for both front-end and back-end development testing.',
+      'Collaborated with developers to identify bugs, ensuring smooth releases.',
+    ],
+    technologies: ['Laravel', 'PHP','Bootstrap','Cypress', 'Manuel Tests'],
   },
 ];
+
 
 export default function Experience() {
   return (

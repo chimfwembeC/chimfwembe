@@ -1,18 +1,37 @@
 import React from 'react';
 import { Download, Briefcase, GraduationCap, Award } from 'lucide-react';
+import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
 
 const education = [
   {
-    degree: 'Master of Science in Computer Science',
-    school: 'Stanford University',
-    period: '2018 - 2020',
-    description: 'Specialized in Artificial Intelligence and Machine Learning',
+    degree: 'Diploma in Information Technology',
+    school: 'Evelyn Hone College of Applied Arts and Commerce',
+    period: '2021 - 2023',
+    description: 'Focused on software development, system testing, database management, cyber security, and networking. Gained hands-on experience in front-end and back-end development.',
   },
   {
-    degree: 'Bachelor of Science in Software Engineering',
-    school: 'MIT',
-    period: '2014 - 2018',
-    description: 'Graduated with honors, Dean\'s List all semesters',
+    degree: 'Grade 12 Certificate',
+    school: 'Nakonde Secondary School',
+    period: '2018 - 2020',
+    description: 'Achieved strong academic performance with a focus on mathematics and sciences, building a solid foundation for IT studies.',
+  },
+  {
+    degree: 'Junior Secondary Certificate',
+    school: 'Chinsali Day Secondary School',
+    period: '2016 - 2018',
+    description: 'Completed foundational studies with emphasis on key academic subjects, preparing for advanced education.! But failed Computer studies (broken) UNBELIEVEABLE!!',
+  },
+  {
+    degree: 'Primary School Certificate',
+    school: 'New Kanyama Primary School',
+    period: '2009 - 2015',
+    description: 'Established a strong educational foundation with early exposure to technology and problem-solving skills.',
+  },
+  {
+    degree: 'Self-Taught Enthusiast',
+    school: 'University of Home',
+    period: '2009 - Present',
+    description: 'Developed a passion for IT and computers through self-directed learning at home. Explored programming, system troubleshooting, and emerging technologies, which inspired a career in information technology.',
   },
 ];
 
@@ -39,7 +58,7 @@ export default function Resume() {
             Full Stack Developer with expertise in modern web technologies
           </p>
           <a
-            href="/resume.pdf"
+            href={CV}
             download
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
           >
