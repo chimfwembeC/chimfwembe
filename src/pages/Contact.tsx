@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
@@ -6,29 +6,30 @@ const contactInfo = [
   {
     Icon: Mail,
     label: 'Email',
-    value: 'contact@example.com',
-    href: 'mailto:contact@example.com',
+    value: 'kangwac3@gmail.com',
+    href: 'mailto:kangwac3@gmail.com',
   },
   {
     Icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '+260 (765) 725-317',
+    href: 'tel:+260765725317',
   },
   {
     Icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Lusaka Zambia, Lusaka.',
     href: null,
   },
 ];
+
 
 export default function Contact() {
   return (
     <div className="min-h-screen pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="section-title">Get in Touch</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
               Contact Information
@@ -61,7 +62,7 @@ export default function Contact() {
               </h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/chimfwembeC"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors"
@@ -69,7 +70,7 @@ export default function Contact() {
                   <Github className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/chimfwembe-kangwa-60098127b"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors"
@@ -77,7 +78,7 @@ export default function Contact() {
                   <Linkedin className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/CharlesK83179"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:text-indigo-600 transition-colors"

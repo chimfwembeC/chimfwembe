@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from './assets/icons/favicon-32x32.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -21,9 +22,10 @@ export default function Navbar() {
         <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg px-6">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
-              <Code2 className="h-8 w-8 text-indigo-600" />
+              {/* <Code2 className="h-8 w-8 text-indigo-600" /> */}
+              <img src={Logo} alt="" />
               <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>
-              <span className="block md:hidden ml-2 text-xl font-bold gradient-text">CK</span>
+              {/* <span className="block md:hidden ml-2 text-xl font-bold gradient-text">CK</span> */}
             </Link>
             
             <div className="hidden md:block">
@@ -61,7 +63,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`block px-4 py-3 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors ${
+                className={`block px-4 py-3 mb-2 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors ${
                   location.pathname === item.path ? 'text-indigo-600 bg-indigo-50' : ''
                 }`}
                 onClick={() => setIsOpen(false)}

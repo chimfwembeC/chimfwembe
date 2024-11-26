@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code2, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import Logo from './assets/icons/favicon-32x32.png';
 const navigation = {
   main: [
     { name: 'About', path: '/about' },
@@ -32,9 +32,9 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center">              
               <Link to="/" className="flex items-center">
-              <Code2 className="h-8 w-8 text-indigo-600" />
-              <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>
-              <span className="block md:hidden ml-2 text-xl font-bold gradient-text">CK</span>
+              {/* <Code2 className="h-8 w-8 text-indigo-600" /> */}
+              <img src={Logo} alt="" />
+              <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>              
             </Link>
             </div>
             <p className="text-gray-400 max-w-xs">
