@@ -64,10 +64,23 @@ export default function About() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="relative">
-              <div className="relative h-[600px] rounded-2xl">
+              <div className="relative hidden md:block h-[600px]">
                 {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div> */}
                 <img
-                  src={DeveloperImage}
+                  src={DeveloperImage}                  
+                  alt="Developer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              <div className="relative block md:hidden h-[400px]">
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div>
+                <img
+                  src={DeveloperImage}                  
                   alt="Developer"
                   className="w-full h-full object-cover"
                 />
