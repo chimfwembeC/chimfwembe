@@ -45,7 +45,7 @@ const projects = [
 
 const experiences = [
   {
-    title: 'Junior Full Stack Developer',
+    title: 'Junior Software Developer',
     company: 'Kamstar.tech',
     period: 'Jan 2024 - Present',
     website: 'https://kamstar.tech',
@@ -55,10 +55,10 @@ const experiences = [
       'Spearheading both front-end and back-end development to ensure scalable and high-performing web applications.',
       'Implemented several features and optimizations across multiple projects.',
     ],
-    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel','PHP','REST APIs','Graphql'],
+    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel', 'PHP', 'REST APIs', 'Graphql'],
   },
   {
-    title: 'Intern Stack Developer',
+    title: 'Intern Software Developer',
     company: 'Probase Zambia',
     period: 'Feb 2024 - April 2024',
     website: 'https://probasegroup.com',
@@ -68,7 +68,7 @@ const experiences = [
       'Worked with dynamic team',
       'Gained insight on third-party APIs and payment gateways',
     ],
-    technologies: ['Laravel', 'PHP','REST APIs'],
+    technologies: ['Laravel', 'PHP', 'REST APIs'],
   },
   {
     title: 'Intern Software Tester',
@@ -81,7 +81,7 @@ const experiences = [
       'Worked with Laravel and Bootstrap for both front-end and back-end development testing.',
       'Collaborated with developers to identify bugs, ensuring smooth releases.',
     ],
-    technologies: ['Laravel', 'PHP','Bootstrap','Cypress', 'Manuel Tests'],
+    technologies: ['Laravel', 'PHP', 'Bootstrap', 'Cypress', 'Manuel Tests'],
   },
 ];
 
@@ -89,7 +89,7 @@ const skillCategories = [
   {
     title: 'Frontend Development',
     Icon: Globe,
-    skills: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS','Bootstrap','Css', 'Next.js', 'Redux'],
+    skills: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS', 'Bootstrap', 'Css', 'Next.js', 'Redux'],
   },
   {
     title: 'Backend Development',
@@ -132,7 +132,7 @@ export default function Home() {
                   I build exceptional digital experiences that combine beautiful design with powerful functionality.
                 </p>
               </div>
-              
+
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/projects"
@@ -176,13 +176,13 @@ export default function Home() {
       /> */}
             <div className="relative">
               <div className="relative h-[600px] rounded-2xl">
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
                 <img
                   src={DeveloperImage}
                   alt="Developer"
                   className="w-full h-full object-cover"
                 />
-                
+
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function Home() {
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Get a detailed overview of my experience, skills, and qualifications.
           </p>
-          <a          
+          <a
             href={CV}
             download
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors"

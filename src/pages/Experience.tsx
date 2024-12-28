@@ -3,7 +3,7 @@ import ExperienceCard from '../components/ExperienceCard';
 
 const experiences = [
   {
-    title: 'Junior Full Stack Developer',
+    title: 'Junior Software Developer',
     company: 'Kamstar.tech',
     period: 'Jan 2024 - Present',
     website: 'https://kamstar.tech',
@@ -13,10 +13,10 @@ const experiences = [
       'Spearheading both front-end and back-end development to ensure scalable and high-performing web applications.',
       'Implemented several features and optimizations across multiple projects.',
     ],
-    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel','PHP','REST APIs','Graphql'],
+    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel', 'PHP', 'REST APIs', 'Graphql'],
   },
   {
-    title: 'Intern Stack Developer',
+    title: 'Intern Software Developer',
     company: 'Probase Zambia',
     period: 'Feb 2024 - April 2024',
     website: 'https://probasegroup.com',
@@ -26,7 +26,7 @@ const experiences = [
       'Worked with dynamic team',
       'Gained insight on third-party APIs and payment gateways',
     ],
-    technologies: ['Laravel', 'PHP','REST APIs'],
+    technologies: ['Laravel', 'PHP', 'REST APIs'],
   },
   {
     title: 'Intern Software Tester',
@@ -39,7 +39,7 @@ const experiences = [
       'Worked with Laravel and Bootstrap for both front-end and back-end development testing.',
       'Collaborated with developers to identify bugs, ensuring smooth releases.',
     ],
-    technologies: ['Laravel', 'PHP','Bootstrap','Cypress', 'Manuel Tests'],
+    technologies: ['Laravel', 'PHP', 'Bootstrap', 'Cypress', 'Manuel Tests'],
   },
 ];
 

@@ -65,9 +65,9 @@ export default function About() {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="relative hidden md:block h-[600px]">
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
                 <img
-                  src={DeveloperImage}                  
+                  src={DeveloperImage}
                   alt="Developer"
                   className="w-full h-full object-cover"
                 />
@@ -80,7 +80,7 @@ export default function About() {
               <div className="relative block md:hidden h-[400px]">
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div>
                 <img
-                  src={DeveloperImage}                  
+                  src={DeveloperImage}
                   alt="Developer"
                   className="w-full h-full object-cover"
                 />
