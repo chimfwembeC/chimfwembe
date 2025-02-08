@@ -14,7 +14,12 @@ import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
 import ExperienceCard from '../components/ExperienceCard';
 import DeveloperImage from '../components/assets/images/developer.png';
-import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
+// import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
+import ProjectAnimation from '../components/ProjectAnimation';
+import SkillAnimation from '../components/SkillAnimation';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
 
 const projects = [
   {
@@ -116,7 +121,7 @@ const skillCategories = [
 
 export default function Home() {
   return (
-    <>
+    <div className="w-full py-24 bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
       {/* Hero Section */}
       <section id="about" className="min-h-screen pt-24 px-4">
         <div className="max-w-7xl mx-auto">
@@ -124,13 +129,18 @@ export default function Home() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-lg font-semibold text-indigo-600 mb-3">Full Stack Developer</h2>
-                <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-4">
+                <h1 className="text-5xl font-bold text-gray-100/80 leading-tight mb-4">
                   Creating Digital Excellence Through{' '}
                   <span className="gradient-text">Code</span>
                 </h1>
-                <p className="text-xl text-gray-600">
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 6 }}
+                  className="text-xl text-gray-600"
+                >
                   I build exceptional digital experiences that combine beautiful design with powerful functionality.
-                </p>
+                </motion.div>
               </div>
 
               <div className="flex flex-wrap gap-4">
@@ -174,9 +184,9 @@ export default function Home() {
         alt="Developer"
         className="w-full h-auto"
       /> */}
-            <div className="relative">
+            {/* <div className="relative">
               <div className="relative h-[600px] rounded-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-gray-50/10 to-transparent"></div>
                 <img
                   src={DeveloperImage}
                   alt="Developer"
@@ -184,7 +194,7 @@ export default function Home() {
                 />
 
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -192,7 +202,7 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="section-title">Work Experience</h2>
+          <h2 className="section-title text-gray-100">Work Experience</h2>
           <div className="grid grid-cols-1 gap-8">
             {experiences.map((experience) => (
               <ExperienceCard key={experience.company} {...experience} />
@@ -202,34 +212,33 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4">
+      <section id="projects" className="py-20 px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="section-title">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
+          <ProjectAnimation />
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="section-title">Skills & Expertise</h2>
+      <section id="skills" className="relative py-20 px-4">
+        <div className="absolute inset-0 z-50 bg-black/50"></div>
+        <div className="max-w-7xl mx-auto overflow-hidden">
+          {/* <h2 className="section-title">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category) => (
               <SkillCard key={category.title} {...category} />
             ))}
-          </div>
+          </div> */}
+
+
+          <SkillAnimation />
         </div>
       </section>
 
       {/* Resume Section */}
       <section id="resume" className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="section-title">Download Resume</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="section-title text-gray-100">Download My Resume</h2>
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Get a detailed overview of my experience, skills, and qualifications.
           </p>
           <a
@@ -242,6 +251,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-    </>
+    </div>
   );
 }

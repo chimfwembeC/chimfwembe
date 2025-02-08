@@ -4,7 +4,7 @@ import DeveloperImage from "../components/assets/images/developer-about-img.png"
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">

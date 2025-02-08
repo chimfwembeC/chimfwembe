@@ -26,7 +26,7 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="section-title">Get in Touch</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -88,7 +88,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <div className="bg-white p-8 rounded-xl shadow-md">
+          <div className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
               Send Me a Message
             </h3>

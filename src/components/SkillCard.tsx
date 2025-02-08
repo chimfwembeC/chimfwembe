@@ -9,7 +9,7 @@ interface SkillCardProps {
 
 export default function SkillCard({ title, Icon, skills }: SkillCardProps) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+    <div className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md hover:shadow-lg transition-shadow">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-indigo-100 rounded-lg">
           <Icon className="h-6 w-6 text-indigo-600" />
