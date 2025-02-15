@@ -97,8 +97,8 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-200 mb-4">Featured Projects</h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             A collection of my most significant projects, showcasing my expertise in full-stack development,
             cloud architecture, and modern technologies.
           </p>

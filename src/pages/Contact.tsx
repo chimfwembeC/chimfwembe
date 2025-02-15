@@ -28,10 +28,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="section-title">Get in Touch</h1>
+        <h1 className="section-title text-4xl text-center text-gray-200">Get in Touch</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <h3 className="text-2xl font-semibold text-gray-200 mb-6">
               Contact Information
             </h3>
             <div className="space-y-6">
@@ -41,7 +41,7 @@ export default function Contact() {
                     <Icon className="h-6 w-6 text-indigo-600" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900">{label}</h4>
+                    <h4 className="font-medium text-gray-400">{label}</h4>
                     {href ? (
                       <a
                         href={href}
@@ -89,7 +89,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <h3 className="text-2xl font-semibold text-gray-200 mb-6">
               Send Me a Message
             </h3>
             <ContactForm />

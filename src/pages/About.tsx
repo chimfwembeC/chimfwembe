@@ -1,6 +1,7 @@
 import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import DeveloperImage from "../components/assets/images/developer-about-img.png";
+import { ReadAlong } from "../components/ReadAlong";
 
 export default function About() {
   return (
@@ -8,8 +9,9 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
-            <div className="prose prose-lg text-gray-600">
+            <h1 className="text-4xl font-bold text-gray-300 mb-6">About Me</h1>
+            <div className="prose prose-lg text-gray-300">
+
               <p className="mb-4">
                 Hello! I'm Chimfwembe Kangwa, a passionate Full Stack Developer
                 with hands-on experience in building scalable, high-performing
@@ -40,7 +42,7 @@ export default function About() {
                 href="https://github.com/chimfwembeC"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-indigo-600 transition-colors"
+                className="text-gray-400 hover:text-indigo-600 transition-colors"
               >
                 <Github className="h-6 w-6" />
               </a>
@@ -48,7 +50,7 @@ export default function About() {
                 href="https://www.linkedin.com/in/chimfwembe-kangwa-60098127b"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-indigo-600 transition-colors"
+                className="text-gray-400 hover:text-indigo-600 transition-colors"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
@@ -56,7 +58,7 @@ export default function About() {
                 href="https://x.com/CharlesK83179"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-indigo-600 transition-colors"
+                className="text-gray-400 hover:text-indigo-600 transition-colors"
               >
                 <Twitter className="h-6 w-6" />
               </a>
@@ -65,7 +67,7 @@ export default function About() {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="relative hidden md:block h-[600px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div> */}
                 <img
                   src={DeveloperImage}
                   alt="Developer"
@@ -78,7 +80,7 @@ export default function About() {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="relative block md:hidden h-[400px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 to-transparent"></div> */}
                 <img
                   src={DeveloperImage}
                   alt="Developer"

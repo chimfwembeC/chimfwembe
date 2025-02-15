@@ -48,8 +48,8 @@ export default function Resume() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Resume</h1>
-          <p className="text-gray-600 mb-4">
+          <h1 className="text-4xl font-bold text-gray-200 mb-4">Resume</h1>
+          <p className="text-gray-400 mb-4">
             Full Stack Developer with expertise in modern web technologies
           </p>
           <motion.a
@@ -67,7 +67,7 @@ export default function Resume() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-10">
             <GraduationCap className="h-6 w-6 text-indigo-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Education</h2>
+            <h2 className="text-2xl font-bold text-gray-200">Education</h2>
           </div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -81,12 +81,12 @@ export default function Resume() {
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2 }}
-                className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md"
+                className="border border-gray-400 rounded-2xl bg-gray-100/20 p-6 shadow-md"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{edu.degree}</h3>
+                <h3 className="text-xl font-semibold text-gray-400 mb-2">{edu.degree}</h3>
                 <p className="text-indigo-600 mb-2">{edu.school}</p>
-                <p className="text-gray-600 mb-2">{edu.period}</p>
-                <p className="text-gray-600">{edu.description}</p>
+                <p className="text-gray-400 mb-2">{edu.period}</p>
+                <p className="text-gray-400">{edu.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -95,7 +95,7 @@ export default function Resume() {
         <div>
           <div className="flex items-center gap-3 mb-6">
             <Award className="h-6 w-6 text-indigo-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Certifications</h2>
+            <h2 className="text-2xl font-bold text-gray-200">Certifications</h2>
           </div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -109,11 +109,11 @@ export default function Resume() {
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2 }}
-                className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md"
+                className="border border-gray-400 rounded-2xl bg-gray-100/20 p-6 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{cert.name}</h3>
+                <h3 className="text-lg font-semibold text-gray-400 mb-2">{cert.name}</h3>
                 <p className="text-indigo-600 mb-1">{cert.issuer}</p>
-                <p className="text-gray-600">{cert.date}</p>
+                <p className="text-gray-400">{cert.date}</p>
               </motion.div>
             ))}
           </motion.div>

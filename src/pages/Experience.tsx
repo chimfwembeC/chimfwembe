@@ -48,10 +48,10 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 px-4 bg-gradient-to-br from-gray-900 to-purple-900 ">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl text-gray-100 text-3xl font-bold text-gray-900 my-12 text-center">
+        <h2 className="text-4xl text-3xl font-bold text-gray-200 my-12 text-center">
           Work Experience
         </h2>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl  mx-auto">
           {experiences.map((experience) => (
             <ExperienceCard key={experience.company} {...experience} />
           ))}

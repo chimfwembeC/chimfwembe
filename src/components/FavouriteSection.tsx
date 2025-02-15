@@ -24,7 +24,7 @@ const cards = [
     }
 ];
 
-export default function SkillAnimation() {
+export default function FavouriteSection() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -45,10 +45,10 @@ export default function SkillAnimation() {
                     transition={{ duration: 0.6 }}
                     className="text-4xl font-bold text-center text-white mb-[15rem]"
                 >
-                    My Skills
+                    My Favourites
                 </motion.h2>
 
-                <div ref={containerRef} className="mx-auto pb-64 pb-48 -ml-24 -mt-28 rotate-[25deg] lg:rotate-[25deg]">
+                <div ref={containerRef} className="mx-auto pb-64 pb-48 -ml-24 lg:ml-0 -mt-28">
                     <div className="flex gap-4">
                         {/* First Column */}
                         <motion.div style={{ y: y1 }} className="flex-1 space-y-4">
@@ -59,7 +59,7 @@ export default function SkillAnimation() {
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
                                     className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
                                 >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
+                                    <img src={card.image} alt={card.title} className="w-64 lg:w-full h-48 object-cover" />
                                     <div className="p-6">
                                         <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
                                         <p className="text-gray-400">{card.description}</p>
@@ -77,7 +77,7 @@ export default function SkillAnimation() {
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
                                     className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
                                 >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
+                                    <img src={card.image} alt={card.title} className="w-64 lg:w-full h-48 object-cover" />
                                     <div className="p-6">
                                         <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
                                         <p className="text-gray-400">{card.description}</p>
@@ -95,7 +95,7 @@ export default function SkillAnimation() {
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
                                     className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
                                 >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
+                                    <img src={card.image} alt={card.title} className="w-64 lg:w-full h-48 object-cover" />
                                     <div className="p-6">
                                         <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
                                         <p className="text-gray-400">{card.description}</p>
@@ -104,24 +104,6 @@ export default function SkillAnimation() {
                             ))}
                         </motion.div>
 
-                        {/* Fourth Column */}
-                        <motion.div style={{ y: y4 }} className="flex-1 space-y-4 pt-12">
-                            {cards.slice(2).map((card, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
-                                >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
-
-                                    <div className="p-6">
-                                        <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
-                                        <p className="text-gray-400">{card.description}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
                     </div>
                 </div>
             </div>

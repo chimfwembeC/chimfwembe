@@ -156,8 +156,8 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-200 mb-4">Skills & Expertise</h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             A comprehensive overview of my technical skills and areas of expertise,
             developed through years of practical experience and continuous learning.
           </p>

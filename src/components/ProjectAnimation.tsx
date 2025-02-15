@@ -69,7 +69,7 @@ export default function ProjectAnimation() {
 
     return (
         // <section className="w-full py-24 bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
-        <section className="w-full py-24">
+        <section className="w-full">
             <div className="px-4">
                 <h2 className="text-4xl font-bold text-center text-white mb-8">
                     My Projects
@@ -98,7 +98,7 @@ export default function ProjectAnimation() {
                                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     />
                                                 </div>
-                                                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                                {/* <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
                                                     <div className="absolute bottom-0 left-0 right-0 p-4">
                                                         <div className="">
                                                             <h3 className="text-xl font-semibold text-gray-100/50 mb-2">{project.title}</h3>
@@ -115,7 +115,7 @@ export default function ProjectAnimation() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     ))}
@@ -142,7 +142,7 @@ export default function ProjectAnimation() {
                                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     />
                                                 </div>
-                                                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                                {/* <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
                                                     <div className="absolute bottom-0 left-0 right-0 p-4">
                                                         <div className="">
                                                             <h3 className="text-xl font-semibold text-gray-100/50 mb-2">{project.title}</h3>
@@ -159,7 +159,7 @@ export default function ProjectAnimation() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     ))}

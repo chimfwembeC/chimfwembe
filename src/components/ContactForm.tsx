@@ -70,7 +70,7 @@ export default function ContactForm() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-400 mb-1">
               <User className="h-4 w-4" />
               Your Name
             </label>
@@ -81,14 +81,14 @@ export default function ContactForm() {
               value={formData.from_name}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              className="w-full rounded-lg border border-gray-500 text-white bg-purple-900 px-4 py-2"
               placeholder="John Doe"
             />
             {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
           </div>
 
           <div>
-            <label htmlFor="email" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="flex items-center gap-2 text-sm font-medium text-gray-400 mb-1">
               <Mail className="h-4 w-4" />
               Email Address
             </label>
@@ -99,14 +99,14 @@ export default function ContactForm() {
               value={formData.from_email}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              className="w-full rounded-lg border border-gray-500 text-white bg-purple-900 px-4 py-2"
               placeholder="john@example.com"
             />
             {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
           </div>
 
           <div>
-            <label htmlFor="phone" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="phone" className="flex items-center gap-2 text-sm font-medium text-gray-400 mb-1">
               <Phone className="h-4 w-4" />
               Phone Number
             </label>
@@ -117,14 +117,14 @@ export default function ContactForm() {
               value={formData.from_phone}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              className="w-full rounded-lg border border-gray-500 text-white bg-purple-900 px-4 py-2"
               placeholder="123-456-7890"
             />
             {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
           </div>
 
           <div>
-            <label htmlFor="address" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="address" className="flex items-center gap-2 text-sm font-medium text-gray-400 mb-1">
               <Home className="h-4 w-4" />
               Address
             </label>
@@ -135,14 +135,14 @@ export default function ContactForm() {
               value={formData.from_address}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              className="w-full rounded-lg border border-gray-500 text-white bg-purple-900 px-4 py-2"
               placeholder="123 Main St"
             />
             {errors.address && <p className="text-sm text-red-600">{errors.address}</p>}
           </div>
 
           <div>
-            <label htmlFor="message" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="message" className="flex items-center gap-2 text-sm font-medium text-gray-400 mb-1">
               <MessageSquare className="h-4 w-4" />
               Message
             </label>
@@ -153,7 +153,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full rounded-lg border border-gray-300 px-4 py-2"
+              className="w-full rounded-lg border border-gray-500 text-white bg-purple-900 px-4 py-2"
               placeholder="Your message here..."
             />
             {errors.message && <p className="text-sm text-red-600">{errors.message}</p>}

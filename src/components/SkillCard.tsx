@@ -9,12 +9,12 @@ interface SkillCardProps {
 
 export default function SkillCard({ title, Icon, skills }: SkillCardProps) {
   return (
-    <div className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md hover:shadow-lg transition-shadow">
+    <div className="border border-gray-400 rounded-2xl bg-gray-100/20 p-6 shadow-md hover:shadow-lg transition-shadow">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-indigo-100 rounded-lg">
           <Icon className="h-6 w-6 text-indigo-600" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <h3 className="text-lg font-semibold text-gray-200">{title}</h3>
       </div>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (

@@ -18,6 +18,9 @@ import DeveloperImage from '../components/assets/images/developer.png';
 import ProjectAnimation from '../components/ProjectAnimation';
 import SkillAnimation from '../components/SkillAnimation';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { ReadAlong } from '../components/ReadAlong';
+import Hero from '../components/Hero';
+import FavouriteSection from '../components/FavouriteSection';
 
 const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
 
@@ -123,87 +126,24 @@ export default function Home() {
   return (
     <div className="w-full py-24 bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
       {/* Hero Section */}
-      <section id="about" className="min-h-screen pt-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-lg font-semibold text-indigo-600 mb-3">Full Stack Developer</h2>
-                <h1 className="text-5xl font-bold text-gray-100/80 leading-tight mb-4">
-                  Creating Digital Excellence Through{' '}
-                  <span className="gradient-text">Code</span>
-                </h1>
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 6 }}
-                  className="text-xl text-gray-600"
-                >
-                  I build exceptional digital experiences that combine beautiful design with powerful functionality.
-                </motion.div>
-              </div>
+      <Hero />
 
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="/projects"
-                  className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
-                >
-                  View Projects
-                  <ArrowRight className="h-5 w-5" />
-                </a>
-                <div className="flex gap-4">
-                  <a
-                    href="https://github.com/chimfwembeC"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white rounded-xl shadow-sm hover:text-indigo-600 transition-colors"
-                  >
-                    <Github className="h-6 w-6" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/chimfwembe-kangwa-60098127b"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white rounded-xl shadow-sm hover:text-indigo-600 transition-colors"
-                  >
-                    <Linkedin className="h-6 w-6" />
-                  </a>
-                  <a
-                    href="https://x.com/CharlesK83179"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white rounded-xl shadow-sm hover:text-indigo-600 transition-colors"
-                  >
-                    <Twitter className="h-6 w-6" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* <img
-        src={DeveloperImage}
-        alt="Developer"
-        className="w-full h-auto"
-      /> */}
-            {/* <div className="relative">
-              <div className="relative h-[600px] rounded-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-50/10 to-transparent"></div>
-                <img
-                  src={DeveloperImage}
-                  alt="Developer"
-                  className="w-full h-full object-cover"
-                />
-
-              </div>
-            </div> */}
-          </div>
+      {/* <div className="min-h-screen bg-gray-50 py-12">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Interactive Read Along
+          </h1>
+          <ReadAlong />
         </div>
-      </section>
+      </div> */}
+
+      <FavouriteSection />
 
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="section-title text-gray-100">Work Experience</h2>
-          <div className="grid grid-cols-1 gap-8">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
             {experiences.map((experience) => (
               <ExperienceCard key={experience.company} {...experience} />
             ))}
@@ -220,7 +160,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="relative py-20 px-4">
-        <div className="absolute inset-0 z-50 bg-black/50"></div>
+        {/* <div className="absolute inset-0 z-50 bg-black/50"></div> */}
         <div className="max-w-7xl mx-auto overflow-hidden">
           {/* <h2 className="section-title">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
