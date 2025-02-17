@@ -1,40 +1,139 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+// Import icons from your icon library (e.g., lucide-react)
+import { Globe, Server, Smartphone, Cloud, Database, Code2, Terminal } from 'lucide-react';
 
-const cards = [
+const skillCategories = [
     {
-        title: "Full-Stack Development",
-        description: "Designing responsive and scalable applications using modern frameworks and libraries.",
-        image: "https://images.unsplash.com/photo-1611095973510-d38e5e5afbd2?auto=format&fit=crop&w=800&q=80"
+        title: 'Frontend Development',
+        Icon: Globe,
+        skills: [
+            'React',
+            'Vue.js',
+            'Next.js',
+            'TypeScript',
+            'TailwindCSS',
+            'Redux',
+            'GraphQL',
+            'Webpack',
+            'HTML5/CSS3',
+            'JavaScript ES6+',
+            'Sass/SCSS'
+        ],
     },
     {
-        title: "Cloud Architecture",
-        description: "Building and deploying robust solutions on AWS, Azure, or GCP for optimal scalability.",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+        title: 'Backend Development',
+        Icon: Server,
+        skills: [
+            'Node.js',
+            'Python',
+            // 'Java',
+            'Express',
+            'Django',
+            // 'Spring Boot',
+            'REST APIs',
+            'Microservices',
+            'API Gateway',
+            // 'Socket.IO'
+        ],
     },
     {
-        title: "Cybersecurity",
-        description: "Implementing proactive security measures to safeguard data and infrastructure.",
-        image: "https://images.unsplash.com/photo-1605902711622-cfb43c443e7e?auto=format&fit=crop&w=800&q=80"
+        title: 'Mobile Development',
+        Icon: Smartphone,
+        skills: [
+            'React Native',
+            'Flutter',
+            // 'iOS (Swift)',
+            // 'Android (Kotlin)',
+            'Expo',
+            'Mobile UI/UX',
+            // 'App Store Deployment',
+            'Push Notifications'
+        ],
     },
     {
-        title: "DevOps & Automation",
-        description: "Streamlining development pipelines with CI/CD, containerization, and automation tools.",
-        image: "https://images.unsplash.com/photo-1581091012184-c0742f54f7b0?auto=format&fit=crop&w=800&q=80"
-    }
+        title: 'Cloud & DevOps',
+        Icon: Cloud,
+        skills: [
+            'AWS',
+            'Google Cloud',
+            'Docker',
+            // 'Kubernetes',
+            'CI/CD',
+            // 'Jenkins',
+            'GitHub Actions',
+            // 'Terraform',
+            // 'Cloud Architecture',
+            // 'Serverless'
+        ],
+    },
+    {
+        title: 'Database & Storage',
+        Icon: Database,
+        skills: [
+            'PostgreSQL',
+            // 'MongoDB',
+            // 'Redis',
+            'MySQL',
+            // 'Elasticsearch',
+            'Firebase',
+            // 'DynamoDB',
+            'Database Design',
+            'Data Modeling'
+        ],
+    },
+    {
+        title: 'Programming Languages',
+        Icon: Code2,
+        skills: [
+            'JavaScript',
+            'TypeScript',
+            'Python',
+            // 'Java',
+            'C++',
+            // 'Go',
+            // 'Rust',
+            'SQL',
+            'Shell Scripting',
+            'PHP'
+        ],
+    },
+    {
+        title: 'Development Tools',
+        Icon: Terminal,
+        skills: [
+            'Git',
+            'VS Code',
+            // 'IntelliJ IDEA',
+            'Postman',
+            'Docker Desktop',
+            'Terminal',
+            'Vim',
+            // 'Jira',
+            'Figma',
+            'Adobe XD'
+        ],
+    },
 ];
 
 export default function SkillAnimation() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start end", "end start"]
+        offset: ['start end', 'end start']
     });
 
+    // Parallax transforms for each column
     const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
     const y2 = useTransform(scrollYProgress, [0, 1], [0, 200]);
     const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const y4 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
+    // Distribute skill categories into 4 columns
+    const columns = [[], [], [], []];
+    skillCategories.forEach((category, index) => {
+        columns[index % 4].push(category);
+    });
 
     return (
         <section className="py-24 h-full">
@@ -43,85 +142,51 @@ export default function SkillAnimation() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center text-white mb-[15rem]"
+                    className="text-4xl font-bold text-center text-white mb-20"
                 >
                     My Skills
                 </motion.h2>
 
-                <div ref={containerRef} className="mx-auto pb-64 pb-48 -ml-24 -mt-28 rotate-[25deg] lg:rotate-[25deg]">
+                <div
+                    ref={containerRef}
+                    className="mx-auto pb-64 -ml-24 mt-28 rotate-[25deg] lg:rotate-[25deg]"
+                >
                     <div className="flex gap-4">
-                        {/* First Column */}
-                        <motion.div style={{ y: y1 }} className="flex-1 space-y-4">
-                            {cards.slice(0, 2).map((card, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
-                                >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
-                                    <div className="p-6">
-                                        <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
-                                        <p className="text-gray-400">{card.description}</p>
-                                    </div>
+                        {columns.map((col, colIndex) => {
+                            // Select the proper transform based on the column index
+                            const y =
+                                colIndex === 0 ? y1 : colIndex === 1 ? y2 : colIndex === 2 ? y3 : y4;
+                            return (
+                                <motion.div key={colIndex} style={{ y }} className="flex-1 space-y-4 pt-12">
+                                    {col.map((category, index) => {
+                                        const Icon = category.Icon;
+                                        return (
+                                            <motion.div
+                                                key={index}
+                                                initial={{ opacity: 0, x: 50 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                                                className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
+                                            >
+                                                <div className="p-6">
+                                                    <div className="flex items-center gap-3">
+                                                        <Icon className="w-8 h-8 text-white" />
+                                                        <h3 className="text-xl text-gray-200 font-semibold">{category.title}</h3>
+                                                    </div>
+                                                    <ul className="mt-4 space-y-1">
+                                                        {category.skills.map((skill, i) => (
+                                                            <li key={i} className="text-gray-400 text-sm">
+                                                                {skill}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </motion.div>
+                                        );
+                                    })}
                                 </motion.div>
-                            ))}
-                        </motion.div>
-
-                        {/* Second Column */}
-                        <motion.div style={{ y: y2 }} className="flex-1 space-y-4 pt-12">
-                            {cards.slice(2).map((card, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
-                                >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
-                                    <div className="p-6">
-                                        <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
-                                        <p className="text-gray-400">{card.description}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-
-                        {/* Third Column */}
-                        <motion.div style={{ y: y3 }} className="flex-1 space-y-4 pt-12">
-                            {cards.slice(2).map((card, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
-                                >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
-                                    <div className="p-6">
-                                        <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
-                                        <p className="text-gray-400">{card.description}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-
-                        {/* Fourth Column */}
-                        <motion.div style={{ y: y4 }} className="flex-1 space-y-4 pt-12">
-                            {cards.slice(2).map((card, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
-                                >
-                                    <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
-
-                                    <div className="p-6">
-                                        <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
-                                        <p className="text-gray-400">{card.description}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

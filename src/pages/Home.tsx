@@ -1,55 +1,27 @@
 import {
-  Github,
-  Linkedin,
-  Twitter,
   Globe,
   Server,
   Smartphone,
   Cloud,
   Download,
-  ArrowRight,
   ComputerIcon,
 } from 'lucide-react';
-import ProjectCard from '../components/ProjectCard';
-import SkillCard from '../components/SkillCard';
+// import ProjectCard from '../components/ProjectCard';
+// import SkillCard from '../components/SkillCard';
 import ExperienceCard from '../components/ExperienceCard';
-import DeveloperImage from '../components/assets/images/developer.png';
+// import DeveloperImage from '../components/assets/images/developer.png';
 // import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
 import ProjectAnimation from '../components/ProjectAnimation';
 import SkillAnimation from '../components/SkillAnimation';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ReadAlong } from '../components/ReadAlong';
+// import { motion, useScroll, useTransform } from 'framer-motion';
+// import { ReadAlong } from '../components/ReadAlong';
 import Hero from '../components/Hero';
 import FavouriteSection from '../components/FavouriteSection';
+import { projectData } from '../data/Projects';
 
 const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
 
-const projects = [
-  {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce platform built with React, Node.js, and MongoDB',
-    image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800&h=400',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-  },
-  {
-    title: 'AI Task Manager',
-    description: 'Smart task management app with AI-powered prioritization',
-    image: 'https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?auto=format&fit=crop&q=80&w=800&h=400',
-    tags: ['Next.js', 'OpenAI', 'Prisma', 'PostgreSQL'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-  },
-  {
-    title: 'Real-time Analytics Dashboard',
-    description: 'Interactive dashboard for real-time data visualization',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=400',
-    tags: ['Vue.js', 'D3.js', 'Firebase', 'TailwindCSS'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-  },
-];
+const projects = projectData;
 
 const experiences = [
   {
@@ -143,7 +115,7 @@ export default function Home() {
       <section id="experience" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="section-title text-gray-100">Work Experience</h2>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
+          <div className="mx-auto grid grid-cols-1 gap-8">
             {experiences.map((experience) => (
               <ExperienceCard key={experience.company} {...experience} />
             ))}
@@ -159,9 +131,9 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="relative py-20 px-4">
+      <section id="skills" className="relative py-20">
         {/* <div className="absolute inset-0 z-50 bg-black/50"></div> */}
-        <div className="max-w-7xl mx-auto overflow-hidden">
+        <div className="overflow-hidden">
           {/* <h2 className="section-title">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category) => (
