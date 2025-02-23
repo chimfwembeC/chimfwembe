@@ -6,6 +6,7 @@ export interface Project {
     tags: string[];
     githubUrl: string;
     liveUrl: string;
+    favorite: boolean;  // Add favorite property
 }
 
 export const projectData: Project[] = [
@@ -17,6 +18,7 @@ export const projectData: Project[] = [
         tags: ['React', 'Laravel', 'Mysql', 'PHP'],
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
+        favorite: false, // Initial favorite state
     },
     {
         id: 2,
@@ -26,6 +28,7 @@ export const projectData: Project[] = [
         tags: ['Python', 'Fastapi', 'Machine Learning', 'Cyber Security', 'React'],
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
+        favorite: false, // Initial favorite state
     },
     {
         id: 3,
@@ -35,6 +38,7 @@ export const projectData: Project[] = [
         tags: ['Laravel', 'React', 'Mysql', 'PHP'],
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
+        favorite: true, // Initial favorite state
     },
     {
         id: 4,
@@ -44,6 +48,7 @@ export const projectData: Project[] = [
         tags: ['React', 'Laravel', 'Mysql', 'PHP'],
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
+        favorite: true, // Initial favorite state
     },
     {
         id: 5,
@@ -53,6 +58,7 @@ export const projectData: Project[] = [
         tags: ['React', 'OpenWeather API', 'TailwindCSS'],
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
+        favorite: true, // Initial favorite state
     },
     {
         id: 6,
@@ -62,5 +68,6 @@ export const projectData: Project[] = [
         tags: ['React', 'TailwindCSS', 'Framer motion'],
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
+        favorite: false, // Initial favorite state
     }
 ];

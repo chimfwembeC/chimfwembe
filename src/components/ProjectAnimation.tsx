@@ -90,34 +90,16 @@ export default function ProjectAnimation() {
                                     {[...firstRow, ...firstRow].map((project, index) => (
                                         <div
                                             key={index}
-                                            className="flex-none w-24 lg:w-64 border border-gray-500 rounded-2xl bg-gray-100/20"
+                                            className="flex-none w-24 lg:w-64  border-2 border-purple-500 rounded-2xl bg-gray-100/20"
                                         >
                                             <div className="group relative overflow-hidden rounded-2xl">
-                                                <div className="aspect-[3/4] overflow-hidden">
+                                                <div className="aspect-[4/4] overflow-hidden">
                                                     <img
                                                         src={project.image}
                                                         alt={project.title}
                                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     />
                                                 </div>
-                                                {/* <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                                                        <div className="">
-                                                            <h3 className="text-xl font-semibold text-gray-100/50 mb-2">{project.title}</h3>
-                                                            <p className="text-gray-100/20 mb-2 line-clamp-1">{project.description}</p>
-                                                            <div className="flex flex-wrap gap-2">
-                                                                {project.tags.map((tag) => (
-                                                                    <span
-                                                                        key={tag}
-                                                                        className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs hover:bg-indigo-100 transition-colors"
-                                                                    >
-                                                                        {tag}
-                                                                    </span>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
                                             </div>
                                         </div>
                                     ))}
@@ -134,34 +116,17 @@ export default function ProjectAnimation() {
                                     {[...secondRow, ...secondRow].map((project, index) => (
                                         <div
                                             key={index}
-                                            className="flex-none w-24 lg:w-64 border border-gray-500 rounded-2xl bg-gray-100/20"
+                                            className="flex-none w-24 lg:w-64 border-2 border-purple-500 rounded-2xl bg-gray-100/20"
                                         >
                                             <div className="group relative overflow-hidden rounded-2xl">
-                                                <div className="aspect-[3/4] overflow-hidden">
+                                                <div className="aspect-[4/4] overflow-hidden">
                                                     <img
                                                         src={project.image}
                                                         alt={project.title}
                                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     />
                                                 </div>
-                                                {/* <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                                                        <div className="">
-                                                            <h3 className="text-xl font-semibold text-gray-100/50 mb-2">{project.title}</h3>
-                                                            <p className="text-gray-100/20  mb-2 line-clamp-1">{project.description}</p>
-                                                            <div className="flex flex-wrap gap-2">
-                                                                {project.tags.map((tag) => (
-                                                                    <span
-                                                                        key={tag}
-                                                                        className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs hover:bg-indigo-100 transition-colors"
-                                                                    >
-                                                                        {tag}
-                                                                    </span>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
+
                                             </div>
                                         </div>
                                     ))}

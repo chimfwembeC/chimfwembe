@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-// Import icons from your icon library (e.g., lucide-react)
 import { Globe, Server, Smartphone, Cloud, Database, Code2, Terminal } from 'lucide-react';
 
 const skillCategories = [
@@ -27,14 +26,11 @@ const skillCategories = [
         skills: [
             'Node.js',
             'Python',
-            // 'Java',
             'Express',
             'Django',
-            // 'Spring Boot',
             'REST APIs',
             'Microservices',
             'API Gateway',
-            // 'Socket.IO'
         ],
     },
     {
@@ -43,11 +39,8 @@ const skillCategories = [
         skills: [
             'React Native',
             'Flutter',
-            // 'iOS (Swift)',
-            // 'Android (Kotlin)',
             'Expo',
             'Mobile UI/UX',
-            // 'App Store Deployment',
             'Push Notifications'
         ],
     },
@@ -58,13 +51,8 @@ const skillCategories = [
             'AWS',
             'Google Cloud',
             'Docker',
-            // 'Kubernetes',
             'CI/CD',
-            // 'Jenkins',
             'GitHub Actions',
-            // 'Terraform',
-            // 'Cloud Architecture',
-            // 'Serverless'
         ],
     },
     {
@@ -72,12 +60,8 @@ const skillCategories = [
         Icon: Database,
         skills: [
             'PostgreSQL',
-            // 'MongoDB',
-            // 'Redis',
             'MySQL',
-            // 'Elasticsearch',
             'Firebase',
-            // 'DynamoDB',
             'Database Design',
             'Data Modeling'
         ],
@@ -89,10 +73,7 @@ const skillCategories = [
             'JavaScript',
             'TypeScript',
             'Python',
-            // 'Java',
             'C++',
-            // 'Go',
-            // 'Rust',
             'SQL',
             'Shell Scripting',
             'PHP'
@@ -104,12 +85,10 @@ const skillCategories = [
         skills: [
             'Git',
             'VS Code',
-            // 'IntelliJ IDEA',
             'Postman',
             'Docker Desktop',
             'Terminal',
             'Vim',
-            // 'Jira',
             'Figma',
             'Adobe XD'
         ],
@@ -153,31 +132,74 @@ export default function SkillAnimation() {
                 >
                     <div className="flex gap-4">
                         {columns.map((col, colIndex) => {
-                            // Select the proper transform based on the column index
-                            const y =
-                                colIndex === 0 ? y1 : colIndex === 1 ? y2 : colIndex === 2 ? y3 : y4;
+                            const y = colIndex === 0 ? y1 : colIndex === 1 ? y2 : colIndex === 2 ? y3 : y4;
                             return (
                                 <motion.div key={colIndex} style={{ y }} className="flex-1 space-y-4 pt-12">
                                     {col.map((category, index) => {
                                         const Icon = category.Icon;
+
+                                        // State for typewriter effect
+                                        const [displayedTitle, setDisplayedTitle] = useState(category.title);
+                                        const [isTyping, setIsTyping] = useState(false);
+                                        const typingSpeed = 100; // Typing speed in milliseconds
+
+                                        // Function to handle typing effect
+                                        const typeWriter = (text) => {
+                                            let i = 0;
+                                            setIsTyping(true);
+                                            const interval = setInterval(() => {
+                                                if (i < text.length) {
+                                                    setDisplayedTitle((prev) => text.slice(0, i + 1)); // Update displayed title correctly
+                                                    i++;
+                                                } else {
+                                                    clearInterval(interval);
+                                                    setIsTyping(false);
+                                                }
+                                            }, typingSpeed);
+                                        };
+
+                                        const handleMouseEnter = () => {
+                                            if (!isTyping) {
+                                                setDisplayedTitle(''); // Reset title for typing
+                                                typeWriter(category.title); // Start typing effect
+                                            }
+                                        };
+
+                                        const handleMouseLeave = () => {
+                                            if (!isTyping) {
+                                                setDisplayedTitle(category.title); // Reset to full title when mouse leaves
+                                            }
+                                        };
+
                                         return (
                                             <motion.div
                                                 key={index}
                                                 initial={{ opacity: 0, x: 50 }}
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                                                className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
+                                                className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl"
                                             >
                                                 <div className="p-6">
                                                     <div className="flex items-center gap-3">
                                                         <Icon className="w-8 h-8 text-white" />
-                                                        <h3 className="text-xl text-gray-200 font-semibold">{category.title}</h3>
+                                                        <h3
+                                                            className="text-xl text-gray-200 font-semibold"
+                                                            onMouseEnter={handleMouseEnter} // Start typing on hover
+                                                            onMouseLeave={handleMouseLeave} // Reset to full title on mouse leave
+                                                        >
+                                                            {displayedTitle || category.title}
+                                                        </h3>
                                                     </div>
                                                     <ul className="mt-4 space-y-1">
                                                         {category.skills.map((skill, i) => (
-                                                            <li key={i} className="text-gray-400 text-sm">
+                                                            <motion.li
+                                                                key={i}
+                                                                className="text-gray-400 text-sm"
+                                                                whileHover={{ scale: 1.1, color: '#a855f7' }} // Change color to a nice purple on hover
+                                                                transition={{ type: 'spring', stiffness: 300 }} // Spring effect
+                                                            >
                                                                 {skill}
-                                                            </li>
+                                                            </motion.li>
                                                         ))}
                                                     </ul>
                                                 </div>
