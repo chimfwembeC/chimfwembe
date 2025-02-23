@@ -124,9 +124,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='animated_showcase'>
+      {/* <section id='animated_showcase'>
         <AnimatedShowcase />
-      </section>
+      </section> */}
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-8">
