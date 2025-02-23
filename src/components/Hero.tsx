@@ -1,34 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Github, Linkedin, Twitter, ArrowRight, Database, Cloud, Repeat as ReactIcon, Terminal } from 'lucide-react';
+import { Github, Linkedin, Twitter, ArrowRight, Database, Cloud, Repeat as ReactIcon, Terminal, Code, Server, Layers, Cpu, Wifi } from 'lucide-react';
 import { AnimatePresence, motion, useAnimation, useScroll, useTransform } from 'framer-motion';
-
-interface TechIcon {
-    icon: React.ElementType;
-    initialPosition: { x: number; y: number };
-    speed: number;
-}
-
-const techIcons: TechIcon[] = [
-    { icon: ReactIcon, initialPosition: { x: -20, y: -20 }, speed: 3 },
-    { icon: Terminal, initialPosition: { x: 20, y: 20 }, speed: 2.5 },
-    { icon: Database, initialPosition: { x: -30, y: 30 }, speed: 2 },
-    { icon: Cloud, initialPosition: { x: 30, y: -30 }, speed: 3.5 },
-];
-
 
 export default function Hero() {
     const { scrollYProgress } = useScroll();
-
-    // Floating Animation for Elements
-    const floatingAnimation = {
-        y: ["0%", "-5%", "0%"],
-        transition: {
-            duration: 3,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "easeInOut",
-        },
-    };
 
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const controls = useAnimation();
@@ -58,84 +33,61 @@ export default function Hero() {
         },
     };
 
-    const floatingIconVariants = {
-        animate: (custom: number) => ({
-            y: [0, -15, 0],
-            x: [0, 10, 0],
-            transition: {
-                duration: custom,
-                repeat: Infinity,
-                repeatType: 'reverse' as const,
-                ease: 'easeInOut',
-            },
-        }),
-    };
+    // Floating icons with glowing effects
+    const icons = [Code, Database, Server, Layers, Cpu, Wifi, Cloud, Terminal];
+    const floatingIcons = icons.map((Icon, index) => {
+        const duration = 3 + Math.random() * 2;
+        return { Icon, duration, color: `hsl(${index * 45}, 70%, 50%)` };
+    });
+
     // Scroll-based Transformations
-    const scaleX = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
     const rotateZ = useTransform(scrollYProgress, [0, 1], [0, 15]);
 
     return (
         <section id="about" className="relative min-h-full lg:min-h-screen pt-24 px-4 overflow-hidden">
-
-            <div className="absolute">
-                <div className="absolute inset-0 opacity-20">
-                    {Array.from({ length: 50 }).map((_, i) => (
+            {/* Floating Tech Icons with Glowing Effects */}
+            {floatingIcons.map(({ Icon, color }, index) => (
+                <motion.div
+                    key={index}
+                    className="absolute"
+                    animate={{
+                        y: [0, -15, 0],
+                        x: [0, 10, 0],
+                    }}
+                    transition={{
+                        duration: 3 + Math.random() * 2,
+                        repeat: Infinity,
+                        repeatType: 'reverse',
+                        ease: 'easeInOut',
+                    }}
+                    style={{
+                        filter: "blur(0.5px)",
+                        top: `${Math.random() * 80 + 10}%`,  // Random position for vertical alignment
+                        left: `${Math.random() * 80 + 10}%`, // Random position for horizontal alignment
+                    }}
+                >
+                    <div className="relative">
                         <motion.div
-                            key={i}
-                            className="absolute h-2 w-2 bg-blue-400 rounded-full"
-                            initial={{
-                                x: Math.random() * window.innerWidth,
-                                y: Math.random() * window.innerHeight,
+                            className="absolute inset-0"
+                            style={{
+                                filter: "blur(10px)",
+                                background: color,
+                                opacity: 0.3,
                             }}
-                            animate={{
-                                x: Math.random() * window.innerWidth,
-                                y: Math.random() * window.innerHeight,
-                                scale: [1, 1.5, 1],
-                            }}
-                            transition={{
-                                duration: Math.random() * 3 + 2,
-                                repeat: Infinity,
-                                repeatType: 'reverse',
-                            }}
-                            style={{ filter: 'blur(1px)' }}
                         />
-                    ))}
-                </div>
-            </div>
+                        <Icon
+                            size={48}
+                            style={{ color }}
+                            className="relative z-10 drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]"
+                        />
+                    </div>
+                </motion.div>
+            ))}
 
-            {/* Top Layer - Floating Circles */}
             <motion.div
                 className="absolute bottom-20 right-20 w-32 h-32 bg-indigo-500 rounded-full opacity-50 blur-3xl"
                 animate={{ y: ["0%", "10%", "0%"], transition: { duration: 5, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" } }}
             />
-            {/* Middle Layer - Floating Tech Icons */}
-            {/* <div className="absolute inset-0">
-                {techIcons.map((tech, index) => {
-                    const Icon = tech.icon;
-                    return (
-                        <motion.div
-                            key={index}
-                            className="absolute"
-                            style={{
-                                left: `${50 + tech.initialPosition.x}%`,
-                                top: `${50 + tech.initialPosition.y}%`,
-                            }}
-                            variants={floatingIconVariants}
-                            animate="animate"
-                            custom={tech.speed}
-                        >
-                            <Icon
-                                className="text-blue-400/60 w-12 h-12 md:w-16 md:h-16"
-                                style={{
-                                    filter: 'drop-shadow(0 0 8px rgba(96, 165, 250, 0.3))',
-                                }}
-                            />
-                        </motion.div>
-                    );
-                })}
-            </div> */}
-
-
             <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6">
                 {/* Title */}
                 <motion.h1
@@ -165,7 +117,6 @@ export default function Hero() {
                     )}
                 </AnimatePresence>
 
-
                 {/* Description with Scroll-based Rotation */}
                 <motion.p
                     style={{ rotateZ }}
@@ -191,7 +142,6 @@ export default function Hero() {
                         <ArrowRight className="h-5 w-5" />
                     </motion.div>
                 </motion.a>
-
 
                 {/* Social Icons with Hover Scroll Effect */}
                 <motion.div className="flex gap-6 mt-4">
