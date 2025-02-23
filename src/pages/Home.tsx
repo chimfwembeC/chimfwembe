@@ -18,6 +18,7 @@ import SkillAnimation from '../components/SkillAnimation';
 import Hero from '../components/Hero';
 import FavouriteSection from '../components/FavouriteSection';
 import { projectData } from '../data/Projects';
+import AnimatedShowcase from '../components/AnimatedShowcase';
 
 const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
 
@@ -121,6 +122,10 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section id='animated_showcase'>
+        <AnimatedShowcase />
       </section>
 
       {/* Projects Section */}

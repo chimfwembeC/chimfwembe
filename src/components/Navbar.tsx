@@ -1,6 +1,7 @@
 import React from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 import Logo from './assets/icons/favicon-32x32.png';
 
 export default function Navbar() {
@@ -19,26 +20,35 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50">
       <div className="mx-auto">
-        <div className="bg-gradient-to-bt from-gray-900 to-purple-900 backdrop-blur-md shadow-lg px-6">
+        <motion.div
+          className="bg-gradient-to-bt from-gray-900 to-purple-900 backdrop-blur-md shadow-lg px-6"
+          initial={{ opacity: 0, y: -20 }} // Initial state for animation
+          animate={{ opacity: 1, y: 0 }} // Animate to this state
+          transition={{ duration: 0.5 }} // Duration of the transition
+        >
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
-              {/* <Code2 className="h-8 w-8 text-indigo-600" /> */}
-              <img src={Logo} alt="" />
+              <img src={Logo} alt="" className="h-8" />
               <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>
-              {/* <span className="block md:hidden ml-2 text-xl font-bold gradient-text">CK</span> */}
             </Link>
 
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-2">
                 {navItems.map((item) => (
-                  <Link
+                  <motion.div
                     key={item.name}
-                    to={item.path}
-                    className={`nav-link ${location.pathname === item.path ? 'text-indigo-600 bg-indigo-50' : 'text-gray-200'
-                      }`}
+                    whileHover={{ scale: 1.1 }} // Scale up on hover
+                    whileTap={{ scale: 0.95 }} // Scale down on tap
+                    transition={{ type: 'spring', stiffness: 300 }} // Spring effect
                   >
-                    {item.name}
-                  </Link>
+                    <Link
+                      to={item.path}
+                      className={`nav-link ${location.pathname === item.path ? 'text-indigo-600 bg-indigo-50' : 'text-gray-200'
+                        } p-2 rounded-lg transition-colors duration-300`}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -52,11 +62,17 @@ export default function Navbar() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0, y: -20 }} // Initial state for dropdown
+          animate={{ opacity: 1, y: 0 }} // Animate to this state
+          exit={{ opacity: 0, y: -20 }} // Exit animation
+          transition={{ duration: 0.3 }} // Duration of the transition
+        >
           <div className="bg-gradient-to-bt from-gray-900 to-purple-900 backdrop-blur-sm rounded-t-xl shadow-lg px-4 py-3 mx-auto max-w-7xl">
             {navItems.map((item) => (
               <Link
@@ -70,7 +86,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
