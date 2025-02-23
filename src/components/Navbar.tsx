@@ -34,12 +34,14 @@ export default function Navbar() {
 
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-2">
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                   <motion.div
                     key={item.name}
+                    initial={{ opacity: 0, y: 20 }} // Initial state for each nav item
+                    animate={{ opacity: 1, y: 0 }} // Animate to visible state
+                    transition={{ delay: index * 0.1, type: 'spring', stiffness: 300 }} // Delay for staggered effect
                     whileHover={{ scale: 1.1 }} // Scale up on hover
                     whileTap={{ scale: 0.95 }} // Scale down on tap
-                    transition={{ type: 'spring', stiffness: 300 }} // Spring effect
                   >
                     <Link
                       to={item.path}
@@ -69,21 +71,27 @@ export default function Navbar() {
         <motion.div
           className="md:hidden"
           initial={{ opacity: 0, y: -20 }} // Initial state for dropdown
-          animate={{ opacity: 1, y: 0 }} // Animate to this state
+          animate={{ opacity: 1, y: 0 }} // Animate to visible state
           exit={{ opacity: 0, y: -20 }} // Exit animation
           transition={{ duration: 0.3 }} // Duration of the transition
         >
           <div className="bg-gradient-to-bt from-gray-900 to-purple-900 backdrop-blur-sm rounded-t-xl shadow-lg px-4 py-3 mx-auto max-w-7xl">
-            {navItems.map((item) => (
-              <Link
+            {navItems.map((item, index) => (
+              <motion.div
                 key={item.name}
-                to={item.path}
-                className={`block px-4 py-3 mb-2 rounded-lg text-gray-200 hover:text-indigo-600 hover:bg-indigo-50 transition-colors ${location.pathname === item.path ? 'text-indigo-600 bg-indigo-50' : ''
-                  }`}
-                onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0, y: 20 }} // Initial state for each mobile nav item
+                animate={{ opacity: 1, y: 0 }} // Animate to visible state
+                transition={{ delay: index * 0.1, type: 'spring', stiffness: 300 }} // Delay for staggered effect
               >
-                {item.name}
-              </Link>
+                <Link
+                  to={item.path}
+                  className={`block px-4 py-3 mb-2 rounded-lg text-gray-200 hover:text-indigo-600 hover:bg-indigo-50 transition-colors ${location.pathname === item.path ? 'text-indigo-600 bg-indigo-50' : ''
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </motion.div>
