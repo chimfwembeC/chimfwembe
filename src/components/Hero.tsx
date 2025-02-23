@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Github, Linkedin, Twitter, ArrowRight, Database, Cloud, Repeat as ReactIcon, Terminal, Code, Server, Layers, Cpu, Wifi } from 'lucide-react';
 import { AnimatePresence, motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import FloatingBubbles from './FloatingBubbles';
 
 export default function Hero() {
     const { scrollYProgress } = useScroll();
@@ -85,31 +86,8 @@ export default function Hero() {
             ))}
 
 
-            <div className="absolute">
-                <div className="absolute inset-0 opacity-20">
-                    {Array.from({ length: 50 }).map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute h-2 w-2 bg-blue-400 rounded-full"
-                            initial={{
-                                x: Math.random() * window.innerWidth,
-                                y: Math.random() * window.innerHeight,
-                            }}
-                            animate={{
-                                x: Math.random() * window.innerWidth,
-                                y: Math.random() * window.innerHeight,
-                                scale: [1, 1.5, 1],
-                            }}
-                            transition={{
-                                duration: Math.random() * 3 + 2,
-                                repeat: Infinity,
-                                repeatType: 'reverse',
-                            }}
-                            style={{ filter: 'blur(1px)' }}
-                        />
-                    ))}
-                </div>
-            </div>
+            <FloatingBubbles />
+
 
             <motion.div
                 className="absolute bottom-20 right-20 w-32 h-32 bg-indigo-500 rounded-full opacity-50 blur-3xl"

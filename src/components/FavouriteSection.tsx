@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { projectData } from '../data/Projects';
+import FloatingBubbles from './FloatingBubbles';
 
 export default function FavouriteSection() {
     const projects = projectData;
@@ -29,6 +30,8 @@ export default function FavouriteSection() {
                 >
                     My Favourites
                 </motion.h2>
+
+                <FloatingBubbles />
 
                 <div ref={containerRef} className="mx-auto -ml-12 lg:ml-0 -mt-28">
                     <div className="flex gap-8">

@@ -19,6 +19,8 @@ import Hero from '../components/Hero';
 import FavouriteSection from '../components/FavouriteSection';
 import { projectData } from '../data/Projects';
 import AnimatedShowcase from '../components/AnimatedShowcase';
+import FloatingBubbles from '../components/FloatingBubbles';
+
 
 const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
 
@@ -116,6 +118,9 @@ export default function Home() {
       <section id="experience" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="section-title text-gray-100">Work Experience</h2>
+
+
+          <FloatingBubbles />
           <div className="mx-auto grid grid-cols-1 gap-8">
             {experiences.map((experience) => (
               <ExperienceCard key={experience.company} {...experience} />
@@ -130,6 +135,8 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-8">
+        <FloatingBubbles />
+
         <div className="max-w-7xl mx-auto">
           <ProjectAnimation />
         </div>
@@ -138,6 +145,8 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="relative py-20">
         {/* <div className="absolute inset-0 z-50 bg-black/50"></div> */}
+        <FloatingBubbles />
+
         <div className="overflow-hidden">
           {/* <h2 className="section-title">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -149,12 +158,15 @@ export default function Home() {
 
           <SkillAnimation />
         </div>
+
       </section>
 
       {/* Resume Section */}
       <section id="resume" className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="section-title text-gray-100">Download My Resume</h2>
+          <FloatingBubbles />
+
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Get a detailed overview of my experience, skills, and qualifications.
           </p>
