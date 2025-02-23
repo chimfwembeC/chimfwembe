@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav className="fixed w-full z-50">
       <div className="mx-auto">
         <motion.div
-          className="bg-gradient-to-bt from-gray-900 to-purple-900 backdrop-blur-md shadow-lg px-6"
+          className="bg-gradient-to-bt from-gray-900 to-purple-900 backdrop-blur-md px-6"
           initial={{ opacity: 0, y: -20 }} // Initial state for animation
           animate={{ opacity: 1, y: 0 }} // Animate to this state
           transition={{ duration: 0.5 }} // Duration of the transition

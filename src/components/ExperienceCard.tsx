@@ -59,7 +59,7 @@ export default function ExperienceCard({
       {/* Timeline line with parallax effect */}
       <motion.div
         style={{ y: lineY }}
-        className="absolute left-1 -top-4 h-[500px] w-0.5 bg-gray-200 group-last:h-48"
+        className="absolute left-1 -top-4 h-[500px] w-0.5 bg-purple-500 group-last:h-48"
       />
 
       {/* Timeline dot with parallax effect */}
@@ -68,7 +68,7 @@ export default function ExperienceCard({
         className="absolute left-[-8px] -top-8 w-6 h-6 rounded-full bg-indigo-600 border-4 border-white"
       />
 
-      <div className="border border-gray-500 rounded-2xl bg-gray-100/20 p-6 shadow-md ml-8">
+      <div className="border border-purple-500 rounded-2xl bg-gray-100/20 p-6 shadow-md ml-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
           <h3 className="text-xl font-semibold text-gray-100">{title}</h3>
           <div className="flex items-center gap-2 text-gray-600 mt-2 sm:mt-0">
