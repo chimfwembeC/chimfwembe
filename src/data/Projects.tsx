@@ -7,6 +7,7 @@ export interface Project {
     githubUrl: string;
     liveUrl: string;
     favorite: boolean;  // Add favorite property
+    type: string;       // Add type property
 }
 
 export const projectData: Project[] = [
@@ -19,6 +20,7 @@ export const projectData: Project[] = [
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
         favorite: false, // Initial favorite state
+        type: 'Work', // Assign project type
     },
     {
         id: 2,
@@ -29,6 +31,7 @@ export const projectData: Project[] = [
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
         favorite: false, // Initial favorite state
+        type: 'Work', // Assign project type
     },
     {
         id: 3,
@@ -39,6 +42,7 @@ export const projectData: Project[] = [
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
         favorite: true, // Initial favorite state
+        type: 'Client', // Assign project type
     },
     {
         id: 4,
@@ -49,6 +53,7 @@ export const projectData: Project[] = [
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
         favorite: true, // Initial favorite state
+        type: 'Personal', // Assign project type
     },
     {
         id: 5,
@@ -59,6 +64,7 @@ export const projectData: Project[] = [
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
         favorite: true, // Initial favorite state
+        type: 'Personal', // Assign project type
     },
     {
         id: 6,
@@ -69,5 +75,6 @@ export const projectData: Project[] = [
         githubUrl: 'https://github.com',
         liveUrl: 'https://example.com',
         favorite: false, // Initial favorite state
+        type: 'Work', // Assign project type
     }
 ];
