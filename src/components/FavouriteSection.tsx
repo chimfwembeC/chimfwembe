@@ -62,7 +62,7 @@ export default function FavouriteSection() {
                                     key={index}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
+                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl"
                                 >
                                     <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
                                     <div className="p-6">
@@ -80,9 +80,9 @@ export default function FavouriteSection() {
                                     key={index}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
+                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl"
                                 >
-                                    <img src={card.image} alt={card.title} className="w-96 h-48 object-cover" />
+                                    <img src={card.image} alt={card.title} className="h-48 object-cover" />
                                     <div className="p-6">
                                         <h3 className="text-xl text-gray-200 font-semibold mb-2">{card.title}</h3>
                                         <p className="text-gray-400">{card.description}</p>
@@ -98,7 +98,7 @@ export default function FavouriteSection() {
                                     key={index}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
-                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 rounded-2xl overflow-hidden shadow-xl"
+                                    className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl"
                                 >
                                     <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
                                     <div className="p-6">
