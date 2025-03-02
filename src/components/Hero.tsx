@@ -103,7 +103,7 @@ export default function Hero() {
                     onAnimationComplete={() => setIsTypingComplete(true)}
                 >
                     <span className="text-2xl lg:text-4xl bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                        Full Stack Developer
+                         Innovative Full-Stack & Network Engineer
                     </span>
                 </motion.h1>
 
@@ -116,8 +116,8 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
                         >
-                            Creating Digital Excellence Through{' '}
-                            <span className="gradient-text">Code</span>
+                             Bridging Code &{' '}
+                            <span className="gradient-text">Connectivity</span>
                         </motion.p>
                     )}
                 </AnimatePresence>
@@ -127,7 +127,7 @@ export default function Hero() {
                     style={{ rotateZ }}
                     className="text-xl text-gray-400 max-w-2xl"
                 >
-                    I build exceptional digital experiences that combine beautiful design with powerful functionality.
+                    I'm a passionate Full-Stack Developer and Certified Network Associate (CCNA) with a strong foundation in network infrastructure, cybersecurity, and software development. With expertise in React, database management, and backend systems, I build powerful and scalable applications while ensuring seamless network performance.
                 </motion.p>
 
                 {/* Call-to-Action Button */}

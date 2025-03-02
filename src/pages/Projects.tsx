@@ -56,8 +56,8 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="flex justify-center mb-8">
-          <div className="flex bg-purple-800 p-4 rounded-lg relative"> {/* Added 'relative' here */}
+        {/* <div className="flex justify-center mb-8">
+          <div className="flex bg-purple-800 p-4 rounded-lg relative">
             {projectTypes.map(({ name, icon }) => (
               <motion.button
                 key={name}
@@ -71,7 +71,7 @@ export default function Projects() {
               </motion.button>
             ))}
           </div>
-        </div>
+        </div> */}
 
 
         {/* Animated Project Cards */}
