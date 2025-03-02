@@ -45,7 +45,7 @@ export default function Hero() {
     const rotateZ = useTransform(scrollYProgress, [0, 1], [0, 15]);
 
     return (
-        <section id="about" className="relative min-h-full lg:min-h-screen pt-24 px-4 overflow-hidden">
+        <section id="about" className="relative min-h-full lg:min-h-screen md:pt-24 px-4 overflow-hidden">
             {/* Floating Tech Icons with Glowing Effects */}
             {floatingIcons.map(({ Icon, color }, index) => (
                 <motion.div
@@ -102,7 +102,7 @@ export default function Hero() {
                     animate="visible"
                     onAnimationComplete={() => setIsTypingComplete(true)}
                 >
-                    <span className="text-2xl lg:text-4xl bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
                          Innovative Full-Stack & Network Engineer
                     </span>
                 </motion.h1>
@@ -125,7 +125,7 @@ export default function Hero() {
                 {/* Description with Scroll-based Rotation */}
                 <motion.p
                     style={{ rotateZ }}
-                    className="text-xl text-gray-400 max-w-2xl"
+                    className="text-xl text-gray-400 max-w-3xl"
                 >
                     I'm a passionate Full-Stack Developer and Certified Network Associate (CCNA) with a strong foundation in network infrastructure, cybersecurity, and software development. With expertise in React, database management, and backend systems, I build powerful and scalable applications while ensuring seamless network performance.
                 </motion.p>
@@ -133,9 +133,9 @@ export default function Hero() {
                 {/* Call-to-Action Button */}
                 <motion.a
                     href="/projects"
-                    className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
+                    className="inline-flex items-center hover:gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileTap={{ scale: 0.5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                 >
                     View Projects

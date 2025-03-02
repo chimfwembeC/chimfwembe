@@ -21,17 +21,20 @@ export default function FavouriteSection() {
 
     return (
         <section className="py-24 h-full">
-            <div className="container mx-auto px-4">
-                <motion.h2
+            <div className="max-w-7xl mx-auto px-4">
+             
+                <motion.h1
+                    className="text-center font-semibold text-indigo-600 mb-[15rem]"                            
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center text-white mb-[15rem]"
+                    transition={{ duration: 0.6 }}                          
                 >
+                    <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
                     My Favourites
-                </motion.h2>
+                    </span>
+                </motion.h1>   
 
-                <FloatingBubbles />
+                {/* <FloatingBubbles /> */}
 
                 <div ref={containerRef} className="mx-auto -ml-12 lg:ml-0 -mt-28">
                     <div className="flex gap-8">
@@ -94,6 +97,8 @@ export default function FavouriteSection() {
                     </div>
                 </div>
             </div>
+
+            <FloatingBubbles />
         </section>
     );
 }

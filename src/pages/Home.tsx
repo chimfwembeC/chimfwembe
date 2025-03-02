@@ -13,60 +13,21 @@ import ExperienceCard from '../components/ExperienceCard';
 // import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
 import ProjectAnimation from '../components/ProjectAnimation';
 import SkillAnimation from '../components/SkillAnimation';
-// import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 // import { ReadAlong } from '../components/ReadAlong';
 import Hero from '../components/Hero';
 import FavouriteSection from '../components/FavouriteSection';
 import { projectData } from '../data/Projects';
 import AnimatedShowcase from '../components/AnimatedShowcase';
 import FloatingBubbles from '../components/FloatingBubbles';
+import ExprienceAnimation from '../components/ExprienceAnimation';
 
 
 const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
 
 const projects = projectData;
 
-const experiences = [
-  {
-    title: 'Junior Software Developer',
-    company: 'Kamstar.tech',
-    period: 'Jan 2024 - Present',
-    website: 'https://kamstar.tech',
-    type: 'Remote',
-    description: [
-      'Currently working as a full-stack developer using Laravel and React with Inertia.js and Vue.js.',
-      'Spearheading both front-end and back-end development to ensure scalable and high-performing web applications.',
-      'Implemented several features and optimizations across multiple projects.',
-    ],
-    technologies: ['React', 'Node.js', 'Vuejs', 'Docker', 'Mysql', 'Laravel', 'PHP', 'REST APIs', 'Graphql'],
-  },
-  {
-    title: 'Intern Software Developer',
-    company: 'Probase Zambia',
-    period: 'Feb 2024 - April 2024',
-    website: 'https://probasegroup.com',
-    type: 'Internship',
-    description: [
-      'Managed database operations and gained insights into large-scale software systems.',
-      'Worked with dynamic team',
-      'Gained insight on third-party APIs and payment gateways',
-    ],
-    technologies: ['Laravel', 'PHP', 'REST APIs'],
-  },
-  {
-    title: 'Intern Software Tester',
-    company: 'Nikkle.io',
-    period: 'Sept 2023 - Jan 2024',
-    website: 'https://nikkle.io',
-    type: 'Remote (Internship)',
-    description: [
-      'Conducted extensive system testing to ensure application stability and reliability, both manuel and automated tests.',
-      'Worked with Laravel and Bootstrap for both front-end and back-end development testing.',
-      'Collaborated with developers to identify bugs, ensuring smooth releases.',
-    ],
-    technologies: ['Laravel', 'PHP', 'Bootstrap', 'Cypress', 'Manuel Tests'],
-  },
-];
+
 
 const skillCategories = [
   {
@@ -103,31 +64,12 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* <div className="min-h-screen bg-gray-50 py-12">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Interactive Read Along
-          </h1>
-          <ReadAlong />
-        </div>
-      </div> */}
 
+      {/* Favorite Section */}
       <FavouriteSection />
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="section-title text-gray-100">Work Experience</h2>
-
-
-          <FloatingBubbles />
-          <div className="mx-auto grid grid-cols-1 gap-8">
-            {experiences.map((experience) => (
-              <ExperienceCard key={experience.company} {...experience} />
-            ))}
-          </div>
-        </div>
-      </section>
+    <ExprienceAnimation />
 
       {/* <section id='animated_showcase'>
         <AnimatedShowcase />
@@ -135,7 +77,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-8">
-        <FloatingBubbles />
+        {/* <FloatingBubbles /> */}
 
         <div className="max-w-7xl mx-auto">
           <ProjectAnimation />
@@ -144,28 +86,28 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="relative py-20">
-        {/* <div className="absolute inset-0 z-50 bg-black/50"></div> */}
-        <FloatingBubbles />
-
-        <div className="overflow-hidden">
-          {/* <h2 className="section-title">Skills & Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map((category) => (
-              <SkillCard key={category.title} {...category} />
-            ))}
-          </div> */}
-
-
+    
+        <div className="overflow-hidden">      
           <SkillAnimation />
         </div>
+        {/* <FloatingBubbles /> */}
 
       </section>
+      {/* <FloatingBubbles /> */}
 
       {/* Resume Section */}
       <section id="resume" className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="section-title text-gray-100">Download My Resume</h2>
-          <FloatingBubbles />
+        <motion.h1
+          className="text-center font-semibold text-indigo-600 mb-4"                            
+          initial="hidden"
+          animate="visible"                              
+          >
+            <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+            Download My Resume
+            </span>
+        </motion.h1>          
+          {/* <FloatingBubbles /> */}
 
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Get a detailed overview of my experience, skills, and qualifications.

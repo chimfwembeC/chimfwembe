@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { projectData } from '../data/Projects';
+import FloatingBubbles from './FloatingBubbles';
 
 // const team = [
 //     {
@@ -73,9 +74,18 @@ export default function ProjectAnimation() {
         // <section className="w-full py-24 bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
         <section className="w-full">
             <div className="px-4">
-                <h2 className="text-4xl font-bold text-center text-white mb-8">
-                    My Projects
-                </h2>
+            <motion.h1
+                className="text-center font-semibold text-indigo-600 mb-4"                            
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}                          
+            >
+                <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+                My Projects
+                </span>
+            </motion.h1>    
+
+            <FloatingBubbles />
 
                 <div className="w-full lg:w-[1000px] mx-auto overflow-hidden">
                     <div ref={containerRef} className="mx-auto">

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Globe, Server, Smartphone, Cloud, Database, Code2, Terminal } from 'lucide-react';
+import FloatingBubbles from './FloatingBubbles';
 
 const skillCategories = [
     {
@@ -116,16 +117,20 @@ export default function SkillAnimation() {
 
     return (
         <section className="py-24 h-full">
-            <div className="container mx-auto px-4">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center text-white mb-20"
-                >
-                    My Skills
-                </motion.h2>
+            <div className="container mx-auto px-4">              
+            <motion.h1
+            className="text-center font-semibold text-indigo-600 mb-4"                            
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}                          
+            >
+                <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+                My Skills
+                </span>
+            </motion.h1>     
 
+            <FloatingBubbles />
+            
                 <div
                     ref={containerRef}
                     className="mx-auto pb-64 -ml-24 mt-28 rotate-[25deg] lg:rotate-[25deg]"
