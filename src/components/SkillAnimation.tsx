@@ -179,13 +179,13 @@ export default function SkillAnimation() {
                                         return (
                                             <motion.div
                                                 key={index}
-                                                initial={{ opacity: 0, x: 50 }}
+                                                // initial={{ opacity: 0, x: 50 }}
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.6, delay: index * 0.2 }}
                                                 whileHover={{
                                                     background: 'linear-gradient(to right bottom, rgba(168, 85, 247, 0), #a855f7)', // Purple 500 to transparent
                                                 }}
-                                                className="bg-gradient-to-br from-gray-500/50 to-purple-900/50 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl"
+                                                className="bg-gradient-to-br from-gray-500/50 to-purple-900/90 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl"
                                             >
                                                 <div className="p-6">
                                                     <div className="flex items-center gap-3">

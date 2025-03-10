@@ -1,7 +1,8 @@
 import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import DeveloperImage from "../components/assets/images/developer-about-img.png";
+import DeveloperImage from "/assets/imgs/about-me.jpeg";
 import { ReadAlong } from "../components/ReadAlong";
+import ReadAlongStatic from "../components/ReadAlongStatic";
 
 export default function About() {
   return (
@@ -12,6 +13,10 @@ export default function About() {
             <h1 className="text-4xl font-bold text-gray-300 mb-6">About Me</h1>
             <div className="prose prose-lg text-gray-300">
 
+                {/* <ReadAlongStatic
+                text={`Hello! I'm Chimfwembe Kangwa, a passionate Full Stack Developer with hands-on experience in building scalable, high-performing web applications. With a Diploma in Information Technology and a solid foundation in both front-end and back-end development, I specialize in delivering innovative solutions in Laravel, React, and Vue.js. My journey in software development has been shaped by opportunities to work on diverse projects, from quiz management systems to results verification platforms. At Kamstar.tech, I led teams and implemented features that enhanced project performance, while my internship experiences honed my skills in database management and software testing. Beyond coding, I am dedicated to learning emerging technologies like Flutter and Swift, and I enjoy exploring digital art, self-development literature, and gaming. I aim to contribute to impactful ICT projects and continuously grow in this dynamic field.
+                `}
+                /> */}
               <p className="mb-4">
                 Hello! I'm Chimfwembe Kangwa, a passionate Full Stack Developer
                 with hands-on experience in building scalable, high-performing
@@ -66,13 +71,13 @@ export default function About() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="relative">
-              <div className="relative hidden md:block h-[600px]">
+              <div className="relative hidden md:block">
                 {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div> */}
-                <img
+                {/* <img
                   src={DeveloperImage}
                   alt="Developer"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-[400px] h-[400px] object-cover"
+                /> */}
               </div>
             </div>
           </div>

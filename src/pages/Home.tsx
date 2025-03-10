@@ -76,8 +76,7 @@ export default function Home() {
       </section> */}
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-8">
-        {/* <FloatingBubbles /> */}
+      <section id="projects" className="py-20 px-8">        
 
         <div className="max-w-7xl mx-auto">
           <ProjectAnimation />
@@ -89,11 +88,9 @@ export default function Home() {
     
         <div className="overflow-hidden">      
           <SkillAnimation />
-        </div>
-        {/* <FloatingBubbles /> */}
+        </div>        
 
-      </section>
-      {/* <FloatingBubbles /> */}
+      </section>      
 
       {/* Resume Section */}
       <section id="resume" className="py-20 px-4">

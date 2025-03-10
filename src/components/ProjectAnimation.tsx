@@ -85,7 +85,7 @@ export default function ProjectAnimation() {
                 </span>
             </motion.h1>    
 
-            <FloatingBubbles />
+            {/* <FloatingBubbles /> */}
 
                 <div className="w-full lg:w-[1000px] mx-auto overflow-hidden">
                     <div ref={containerRef} className="mx-auto">

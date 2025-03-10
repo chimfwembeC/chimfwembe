@@ -30,10 +30,11 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <h1 className="section-title text-4xl text-center text-gray-200">Get in Touch</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
+          <div className=' lg:mt-[80px]'>
             <h3 className="text-2xl font-semibold text-gray-200 mb-6">
               Contact Information
             </h3>
+            
             <div className="space-y-6">
               {contactInfo.map(({ Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">

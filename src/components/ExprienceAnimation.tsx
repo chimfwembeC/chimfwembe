@@ -60,7 +60,7 @@ export default function ExprienceAnimation() {
               </motion.h1>
   
   
-            <FloatingBubbles />
+            {/* <FloatingBubbles /> */}
             <div className="mx-auto grid grid-cols-1 gap-8">
               {experiences.map((experience) => (
                 <ExperienceCard key={experience.company} {...experience} />
