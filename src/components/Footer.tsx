@@ -1,25 +1,39 @@
-import React from 'react';
-import { Code2, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Logo from './assets/icons/favicon-32x32.png';
+import React from "react";
+import {
+  Code2,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Logo from "./assets/icons/favicon-32x32.png";
+
 const navigation = {
   main: [
-    { name: 'About', path: '/about' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Resume', path: '/resume' },
-    { name: 'Contact', path: '/contact' },
+    { name: "About", path: "/about" },
+    { name: "Experience", path: "/experience" },
+    { name: "Projects", path: "/projects" },
+    { name: "Skills", path: "/skills" },
+    { name: "Resume", path: "/resume" },
+    { name: "Contact", path: "/contact" },
   ],
   social: [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/chimfwembeC' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/chimfwembe-kangwa-60098127b' },
-    { name: 'Twitter', icon: Twitter, href: 'https://x.com/CharlesK83179' },
+    { name: "GitHub", icon: Github, href: "https://github.com/chimfwembeC" },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/chimfwembe-kangwa-60098127b",
+    },
+    { name: "Twitter", icon: Twitter, href: "https://x.com/CharlesK83179" },
   ],
   contact: [
-    { icon: Mail, text: 'kangwac3@gmail.com', href: 'kangwac3@gmail.com' },
-    { icon: Phone, text: '+26 (0) 765 725 317', href: 'tel:+260765725317' },
-    { icon: MapPin, text: 'Lusaka Zambia, Lusaka.', href: null },
+    { icon: Mail, text: "kangwac3@gmail.com", href: "kangwac3@gmail.com" },
+    { icon: Phone, text: "+26 (0) 765 725 317", href: "tel:+260765725317" },
+    { icon: MapPin, text: "Lusaka Zambia, Lusaka.", href: null },
   ],
 };
 
@@ -30,15 +44,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand and Description */}
           <div className="space-y-4">
-            <div className="flex items-center">              
+            <div className="flex items-center">
               <Link to="/" className="flex items-center">
-              {/* <Code2 className="h-8 w-8 text-indigo-600" /> */}
-              <img src={Logo} alt="" />
-              <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>              
-            </Link>
+                {/* <Code2 className="h-8 w-8 text-indigo-600" /> */}
+                <img src={Logo} alt="" />
+                <span className="hidden md:block ml-2 text-xl font-bold gradient-text">
+                  Chimfwembe Kangwa
+                </span>
+              </Link>
             </div>
             <p className="text-gray-400 max-w-xs">
-              Building exceptional digital experiences through innovative solutions and clean code.
+              Building exceptional digital experiences through innovative
+              solutions and clean code.
             </p>
           </div>
 
@@ -80,7 +97,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-6">
-              <div className="flex gap-4">
+              {/* <div className="flex gap-4">
                 {navigation.social.map((item) => (
                   <a
                     key={item.name}
@@ -92,14 +109,45 @@ export default function Footer() {
                     <item.icon className="h-6 w-6" />
                   </a>
                 ))}
-              </div>
+              </div> */}
+              {/* Social Icons with Hover Scroll Effect */}
+              <motion.div className="flex gap-6 mt-4">
+                {[
+                  {
+                    href: "https://github.com/chimfwembeC",
+                    icon: <Github className="h-6 w-6" />,
+                  },
+                  {
+                    href: "https://www.linkedin.com/in/chimfwembe-kangwa-60098127b",
+                    icon: <Linkedin className="h-6 w-6" />,
+                  },
+                  {
+                    href: "https://x.com/CharlesK83179",
+                    icon: <Twitter className="h-6 w-6" />,
+                  },
+                ].map(({ href, icon }, index) => (
+                  <motion.a
+                    key={index}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                    whileHover={{ y: -5 }} // Move slightly up on hover
+                    whileTap={{ scale: 0.9 }} // Scale down on click
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {icon}
+                  </motion.a>
+                ))}
+              </motion.div>
             </div>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800">
           <p className="text-gray-400 text-center">
-            © {new Date().getFullYear()} Chimfwembe kangwa. All rights reserved.
+            © {new Date().getFullYear()} Chimfwembe kangwa. All rights
+            reserved.
           </p>
         </div>
       </div>

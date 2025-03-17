@@ -29,7 +29,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
               <img src={Logo} alt="" className="h-8" />
-              <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span>
+              {/* <span className="hidden md:block ml-2 text-xl font-bold gradient-text">Chimfwembe Kangwa</span> */}
             </Link>
 
             <div className="hidden md:block">
@@ -45,7 +45,9 @@ export default function Navbar() {
                   >
                     <Link
                       to={item.path}
-                      className={`nav-link ${location.pathname === item.path ? 'text-indigo-600 bg-indigo-50' : 'text-gray-200'
+                      className={`text-sm  bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent
+                         ${location.pathname === item.path 
+                          ? 'text-indigo-600' : 'text-gray-200'
                         } p-2 rounded-lg transition-colors duration-300`}
                     >
                       {item.name}

@@ -150,7 +150,7 @@ export default function Hero() {
           onAnimationComplete={() => setIsTypingComplete(true)}
         >
           <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent font-bold">
-            Full-Stack Developer <span className=" bg-gradient-to-t from-blue-300 to-purple-500 bg-clip-text text-transparent">|</span> Network Engineer <br /> IT Specialist
+            Hello I'm<span className=" bg-gradient-to-t from-blue-300 to-purple-500 bg-clip-text text-transparent"> Chimfwembe Kangwa</span>
           </span>
         </motion.h1>
 
@@ -162,9 +162,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Bridging Code &{" "}
-              <span className="gradient-text">Connectivity</span>
+            >             
+              <span className="font-semibold bg-purple-600 bg-clip-text text-transparent">IT Professional</span>
             </motion.p>
           )}
         </AnimatePresence>
@@ -176,7 +175,7 @@ export default function Hero() {
         >
           {/* I'm a Full-Stack Developer and CCNA-certified professional with expertise in network infrastructure, cybersecurity, and software development. I specialize in React, database management, and backend systems, building scalable applications with optimized network performance */}
           <ReadAlongStatic
-            text={`I'm a Full-Stack Developer and CCNA-certified professional with expertise in network infrastructure, cybersecurity, and software development. I specialize in React, database management, and backend systems, building scalable applications with optimized network performance`}
+            text={`I'm a Full-Stack Software Developer, CCNA-certified professional, cybersecurity. This means i can build networks, create or install software, and of course protect the created or out-sourced systems or networks.`}
           />
         </motion.p>
         {/* Call-to-Action Button */}

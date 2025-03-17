@@ -19,7 +19,7 @@ export default function ProjectCard({
   liveUrl,
 }: ProjectCardProps) {
   return (
-    <div className="border border-gray-500 rounded-2xl bg-gray-100/20 overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+    <div className="border-2 border-purple-500 rounded-2xl bg-gray-100/20 overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
       <div className="relative h-48 overflow-hidden group">
         <img
           src={image}
@@ -48,13 +48,13 @@ export default function ProjectCard({
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-200 mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold text-purple-500 mb-2">{title}</h3>
         <p className="text-gray-400 mb-4 line-clamp-3">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm hover:bg-indigo-100 transition-colors"
+              className="px-3 py-1 border-2 border-purple-500 text-purple-500 rounded-full text-sm hover:bg-indigo-100 transition-colors"
             >
               {tag}
             </span>

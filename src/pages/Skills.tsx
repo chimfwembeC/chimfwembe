@@ -1,117 +1,126 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import SkillCard from '../components/SkillCard';
-import { Globe, Server, Smartphone, Cloud, Code2, Database, Terminal, Cpu } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import SkillCard from "../components/SkillCard";
+import {
+  Globe,
+  Server,
+  Smartphone,
+  Cloud,
+  Code2,
+  Database,
+  Terminal,
+  Cpu,
+} from "lucide-react";
 
 const skillCategories = [
   {
-    title: 'Frontend Development',
+    title: "Frontend Development",
     Icon: Globe,
     skills: [
-      'React',
-      'Vue.js',
-      'Next.js',
-      'TypeScript',
-      'TailwindCSS',
-      'Redux',
-      'GraphQL',
-      'Webpack',
-      'HTML5/CSS3',
-      'JavaScript ES6+',
-      'Sass/SCSS'
+      "React",
+      "Vue.js",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Redux",
+      "GraphQL",
+      "Webpack",
+      "HTML5/CSS3",
+      "JavaScript ES6+",
+      "Sass/SCSS",
     ],
   },
   {
-    title: 'Backend Development',
+    title: "Backend Development",
     Icon: Server,
     skills: [
-      'Node.js',
-      'Python',
+      "Node.js",
+      "Python",
       //  'Java',
-      'Express',
-      'Django',
-      // 'Spring Boot', 
-      'REST APIs',
-      'Microservices',
-      'API Gateway',
+      "Express",
+      "Django",
+      // 'Spring Boot',
+      "REST APIs",
+      "Microservices",
+      "API Gateway",
       //  'Socket.IO'
     ],
   },
   {
-    title: 'Mobile Development',
+    title: "Mobile Development",
     Icon: Smartphone,
     skills: [
-      'React Native',
-      'Flutter',
+      "React Native",
+      "Flutter",
       //  'iOS (Swift)',
       // 'Android (Kotlin)',
-      'Expo',
-      'Mobile UI/UX',
+      "Expo",
+      "Mobile UI/UX",
       // 'App Store Deployment',
-      'Push Notifications'
+      "Push Notifications",
     ],
   },
   {
-    title: 'Cloud & DevOps',
+    title: "Cloud & DevOps",
     Icon: Cloud,
     skills: [
-      'AWS',
-      'Google Cloud',
-      'Docker',
+      "AWS",
+      "Google Cloud",
+      "Docker",
       // 'Kubernetes',
-      'CI/CD',
-      // 'Jenkins', 
-      'GitHub Actions',
+      "CI/CD",
+      // 'Jenkins',
+      "GitHub Actions",
       //  'Terraform',
       // 'Cloud Architecture',
       //  'Serverless'
     ],
   },
   {
-    title: 'Database & Storage',
+    title: "Database & Storage",
     Icon: Database,
     skills: [
-      'PostgreSQL',
-      //  'MongoDB', 
-      //  'Redis', 
-      'MySQL',
-      // 'Elasticsearch', 
-      'Firebase',
+      "PostgreSQL",
+      //  'MongoDB',
+      //  'Redis',
+      "MySQL",
+      // 'Elasticsearch',
+      "Firebase",
       // 'DynamoDB',
-      'Database Design',
-      'Data Modeling'
+      "Database Design",
+      "Data Modeling",
     ],
   },
   {
-    title: 'Programming Languages',
+    title: "Programming Languages",
     Icon: Code2,
     skills: [
-      'JavaScript',
-      'TypeScript',
-      'Python',
+      "JavaScript",
+      "TypeScript",
+      "Python",
       //  'Java',
-      'C++',
-      // 'Go', 
+      "C++",
+      // 'Go',
       // 'Rust',
-      'SQL',
-      'Shell Scripting',
-      'PHP'
+      "SQL",
+      "Shell Scripting",
+      "PHP",
     ],
   },
   {
-    title: 'Development Tools',
+    title: "Development Tools",
     Icon: Terminal,
     skills: [
-      'Git',
-      'VS Code',
+      "Git",
+      "VS Code",
       //  'IntelliJ IDEA',
-      'Postman',
-      'Docker Desktop',
-      'Terminal',
-      'Vim',
+      "Postman",
+      "Docker Desktop",
+      "Terminal",
+      "Vim",
       //  'Jira',
-      'Figma',
-      'Adobe XD'
+      "Figma",
+      "Adobe XD",
     ],
   },
   // {
@@ -140,7 +149,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -156,10 +165,20 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-gray-200 mb-4">Skills & Expertise</h1>
+          <motion.h1
+            className="text-center font-semibold text-indigo-600 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+              Skills & Expertise
+            </span>
+          </motion.h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            A comprehensive overview of my technical skills and areas of expertise,
-            developed through years of practical experience and continuous learning.
+            A comprehensive overview of my technical skills and areas of
+            expertise, developed through years of practical experience and
+            continuous learning.
           </p>
         </motion.div>
 

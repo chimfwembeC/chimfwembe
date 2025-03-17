@@ -9,18 +9,18 @@ interface SkillCardProps {
 
 export default function SkillCard({ title, Icon, skills }: SkillCardProps) {
   return (
-    <div className="border border-gray-400 rounded-2xl bg-gray-100/20 p-6 shadow-md hover:shadow-lg transition-shadow">
+    <div className="bg-gradient-to-br from-gray-500/50 to-purple-900/90 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl p-6 transition-shadow">
       <div className="flex items-center gap-3 mb-4">
-        <div className="p-2 bg-indigo-100 rounded-lg">
-          <Icon className="h-6 w-6 text-indigo-600" />
+        <div className="p-2 bg-purple-100 rounded-lg">
+          <Icon className="h-6 w-6 text-purple-600" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-200">{title}</h3>
+        <h3 className="text-lg font-semibold text-purple-500">{title}</h3>
       </div>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span
             key={skill}
-            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+            className="px-3 py-1 border-2 border-purple-500 text-purple-600 rounded-full text-sm hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
           >
             {skill}
           </span>

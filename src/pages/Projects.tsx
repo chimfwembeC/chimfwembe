@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import ProjectCard from '../components/ProjectCard';
-import { projectData } from '../data/Projects';
-import { Work, User, Briefcase, Star } from 'lucide-react'; // Import icons
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import ProjectCard from "../components/ProjectCard";
+import { projectData } from "../data/Projects";
+import { Work, User, Briefcase, Star } from "lucide-react"; // Import icons
 
 const projects = projectData;
 
 const projectTypes = [
-  { name: 'All', icon: <Star size={16} /> },
-  { name: 'Work', icon: <Briefcase size={16} /> },
-  { name: 'Personal', icon: <User size={16} /> },
-  { name: 'Client', icon: <Briefcase size={16} /> }
+  { name: "All", icon: <Star size={16} /> },
+  { name: "Work", icon: <Briefcase size={16} /> },
+  { name: "Personal", icon: <User size={16} /> },
+  { name: "Client", icon: <Briefcase size={16} /> },
 ];
 
 const containerVariants = {
@@ -27,15 +27,15 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 export default function Projects() {
-  const [selectedType, setSelectedType] = useState('All');
+  const [selectedType, setSelectedType] = useState("All");
 
   const filteredProjects =
-    selectedType === 'All'
+    selectedType === "All"
       ? projects
       : projects.filter((project) => project.type === selectedType);
 
@@ -49,10 +49,21 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-gray-200 mb-4">Featured Projects</h1>
+          <motion.h1
+            className="text-center font-semibold text-indigo-600 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+              Featured Projects
+            </span>
+          </motion.h1>
+
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            A collection of my most significant projects, showcasing my expertise in full-stack development,
-            cloud architecture, and modern technologies.
+            A collection of my most significant projects, showcasing my
+            expertise in full-stack development, cloud architecture, and modern
+            technologies.
           </p>
         </motion.div>
 
@@ -72,7 +83,6 @@ export default function Projects() {
             ))}
           </div>
         </div> */}
-
 
         {/* Animated Project Cards */}
         <motion.div
