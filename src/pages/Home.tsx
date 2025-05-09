@@ -5,79 +5,90 @@ import {
   Cloud,
   Download,
   ComputerIcon,
-} from 'lucide-react';
+} from "lucide-react";
 // import ProjectCard from '../components/ProjectCard';
 // import SkillCard from '../components/SkillCard';
-import ExperienceCard from '../components/ExperienceCard';
+import ExperienceCard from "../components/ExperienceCard";
 // import DeveloperImage from '../components/assets/images/developer.png';
 // import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
-import ProjectAnimation from '../components/ProjectAnimation';
-import SkillAnimation from '../components/SkillAnimation';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import ProjectAnimation from "../components/ProjectAnimation";
+import SkillAnimation from "../components/SkillAnimation";
+import { motion, useScroll, useTransform } from "framer-motion";
 // import { ReadAlong } from '../components/ReadAlong';
-import Hero from '../components/Hero';
-import FavouriteSection from '../components/FavouriteSection';
-import { projectData } from '../data/Projects';
-import AnimatedShowcase from '../components/AnimatedShowcase';
-import FloatingBubbles from '../components/FloatingBubbles';
-import ExprienceAnimation from '../components/ExprienceAnimation';
+import Hero from "../components/Hero";
+import FavouriteSection from "../components/FavouriteSection";
+import { projectData } from "../data/Projects";
+import AnimatedShowcase from "../components/AnimatedShowcase";
+import FloatingBubbles from "../components/FloatingBubbles";
+import ExprienceAnimation from "../components/ExprienceAnimation";
 
-
-const CV = '../components/assets/docs/chimfwembe_Kangwa_cv.pdf';
+const CV = "../components/assets/docs/chimfwembe_Kangwa_cv.pdf";
 
 const projects = projectData;
 
-
-
 const skillCategories = [
   {
-    title: 'Frontend Development',
+    title: "Frontend Development",
     Icon: Globe,
-    skills: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS', 'Bootstrap', 'Css', 'Next.js', 'Redux'],
+    skills: [
+      "React",
+      "Vue.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Bootstrap",
+      "Css",
+      "Next.js",
+      "Redux",
+    ],
   },
   {
-    title: 'Backend Development',
+    title: "Backend Development",
     Icon: Server,
-    skills: ['Node.js', 'Python', 'Express', 'GraphQL', 'REST APIs'],
+    skills: ["Node.js", "Python", "Express", "GraphQL", "REST APIs"],
   },
   {
-    title: 'Mobile Development',
+    title: "Mobile Development",
     Icon: Smartphone,
-    skills: ['React Native', 'Flutter', 'iOS', 'Android', 'Expo'],
+    skills: ["React Native", "Flutter", "iOS", "Android", "Expo"],
   },
   {
-    title: 'Database & Cloud',
+    title: "Database & Cloud",
     Icon: Cloud,
-    skills: ['PostgreSQL', 'MongoDB', 'AWS', 'Firebase', 'Docker', 'Kubernetes'],
+    skills: [
+      "PostgreSQL",
+      "MongoDB",
+      "AWS",
+      "Firebase",
+      "Docker",
+      "Kubernetes",
+    ],
   },
   {
-    title: 'Desktop Development',
+    title: "Desktop Development",
     Icon: ComputerIcon, // Use an appropriate icon for desktop apps
-    skills: ['Electron.js'],
+    skills: ["Electron.js"],
   },
 ];
 
-
 export default function Home() {
   return (
-    <div className="w-full py-24 bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
+    <div className="w-full bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
+      
       {/* Hero Section */}
       <Hero />
-
 
       {/* Favorite Section */}
       <FavouriteSection />
 
       {/* Experience Section */}
-    <ExprienceAnimation />
+      <ExprienceAnimation />
 
       {/* <section id='animated_showcase'>
         <AnimatedShowcase />
       </section> */}
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-8">        
-
+      <section id="projects" className="py-20 px-8">
         <div className="max-w-7xl mx-auto">
           <ProjectAnimation />
         </div>
@@ -85,29 +96,28 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="relative py-20">
-    
-        <div className="overflow-hidden">      
+        <div className="overflow-hidden">
           <SkillAnimation />
-        </div>        
-
-      </section>      
+        </div>
+      </section>
 
       {/* Resume Section */}
       <section id="resume" className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-        <motion.h1
-          className="text-center font-semibold text-indigo-600 mb-4"                            
-          initial="hidden"
-          animate="visible"                              
+          <motion.h1
+            className="text-center font-semibold text-indigo-600 mb-4"
+            initial="hidden"
+            animate="visible"
           >
             <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
-            Download My Resume
+              Download My Resume
             </span>
-        </motion.h1>          
+          </motion.h1>
           {/* <FloatingBubbles /> */}
 
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Get a detailed overview of my experience, skills, and qualifications.
+            Get a detailed overview of my experience, skills, and
+            qualifications.
           </p>
           <a
             href={CV}
