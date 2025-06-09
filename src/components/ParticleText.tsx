@@ -39,6 +39,7 @@ export default function ParticleText({
 
   // Check if device is mobile
   useEffect(() => {
+    if (!canvasRef.current || !containerRef.current) return
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
