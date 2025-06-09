@@ -1,0 +1,517 @@
+/* Base styles and reset */
+.crock-chat {
+  --crock-primary: #6366f1;
+  --crock-primary-dark: #4f46e5;
+  --crock-primary-light: #818cf8;
+  --crock-secondary: #a855f7;
+  --crock-text: #1f2937;
+  --crock-text-light: #6b7280;
+  --crock-bg: #ffffff;
+  --crock-bg-light: #f9fafb;
+  --crock-bg-dark: #f3f4f6;
+  --crock-border: #e5e7eb;
+  --crock-shadow: rgba(0, 0, 0, 0.1);
+  --crock-shadow-strong: rgba(0, 0, 0, 0.15);
+  --crock-user-bubble: #6366f1;
+  --crock-bot-bubble: #f3f4f6;
+  --crock-transition: 0.3s ease;
+  --crock-radius: 0.75rem;
+  --crock-radius-sm: 0.5rem;
+  --crock-radius-lg: 1rem;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--crock-text);
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+}
+
+.crock-chat * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark theme */
+.crock-chat.dark {
+  --crock-text: #f9fafb;
+  --crock-text-light: #d1d5db;
+  --crock-bg: #1f2937;
+  --crock-bg-light: #374151;
+  --crock-bg-dark: #111827;
+  --crock-border: #4b5563;
+  --crock-shadow: rgba(0, 0, 0, 0.3);
+  --crock-shadow-strong: rgba(0, 0, 0, 0.5);
+  --crock-bot-bubble: #374151;
+}
+
+/* Toggle button */
+.crock-chat-toggle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--crock-primary), var(--crock-secondary));
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--crock-shadow-strong);
+  transition: transform var(--crock-transition), box-shadow var(--crock-transition);
+  position: relative;
+  z-index: 10;
+}
+
+.crock-chat-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px var(--crock-shadow-strong);
+}
+
+.crock-chat-toggle:active {
+  transform: scale(0.95);
+}
+
+.crock-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.crock-icon-sm {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.crock-icon-xs {
+  width: 1rem;
+  height: 1rem;
+}
+
+.crock-unread-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Chat window */
+.crock-chat-window {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 0;
+  width: 24rem; /* w-96 */
+  height: 32.5rem; /* h-[520px] */
+  background-color: var(--crock-bg);
+  border-radius: var(--crock-radius-lg);
+  box-shadow: 0 10px 25px var(--crock-shadow-strong);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: crockSlideUp 0.3s ease forwards;
+  border: 1px solid var(--crock-border);
+}
+
+@keyframes crockSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile styles */
+.crock-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+  z-index: 9998;
+}
+
+/* Header */
+.crock-chat-header {
+  background: linear-gradient(135deg, var(--crock-primary), var(--crock-secondary));
+  color: white;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--crock-primary-dark);
+}
+
+.crock-chat-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.crock-chat-header-title h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.crock-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.crock-close-button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity var(--crock-transition);
+}
+
+.crock-close-button:hover {
+  opacity: 1;
+}
+
+/* Messages container */
+.crock-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--crock-bg-light);
+}
+
+.crock-messages-container::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.crock-messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.crock-messages-container::-webkit-scrollbar-thumb {
+  background-color: var(--crock-border);
+  border-radius: 1rem;
+}
+
+/* Message styles */
+.crock-message-wrapper {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.crock-user-message {
+  justify-content: flex-end;
+}
+
+.crock-bot-message {
+  justify-content: flex-start;
+}
+
+.crock-message {
+  max-width: 80%;
+  padding: 0.75rem;
+  border-radius: var(--crock-radius);
+  box-shadow: 0 1px 2px var(--crock-shadow);
+  position: relative;
+}
+
+.crock-user-message .crock-message {
+  background-color: var(--crock-user-bubble);
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.crock-bot-message .crock-message {
+  background-color: var(--crock-bot-bubble);
+  color: var(--crock-text);
+  border-top-left-radius: 0;
+}
+
+.crock-message-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.crock-timestamp {
+  font-size: 0.7rem;
+}
+
+.crock-user-message .crock-message-header {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Typing indicator */
+.crock-typing {
+  padding: 0.75rem;
+}
+
+.crock-typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.crock-typing-indicator span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--crock-text-light);
+  display: inline-block;
+  animation: crockBounce 1.4s infinite ease-in-out both;
+}
+
+.crock-typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.crock-typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes crockBounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Buttons and quick replies */
+.crock-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.crock-button {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--crock-bg);
+  color: var(--crock-primary);
+  border: 1px solid var(--crock-primary);
+  border-radius: var(--crock-radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color var(--crock-transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crock-button:hover {
+  background-color: var(--crock-primary-light);
+  color: white;
+}
+
+.crock-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.crock-quick-reply {
+  padding: 0.375rem 0.75rem;
+  background-color: var(--crock-bg);
+  color: var(--crock-primary);
+  border: 1px solid var(--crock-primary-light);
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background-color var(--crock-transition);
+  white-space: nowrap;
+}
+
+.crock-quick-reply:hover {
+  background-color: var(--crock-primary);
+  color: white;
+}
+
+/* Lead form */
+.crock-lead-form-container {
+  background-color: var(--crock-bg);
+  border-radius: var(--crock-radius);
+  padding: 1rem;
+  box-shadow: 0 2px 8px var(--crock-shadow);
+  margin-bottom: 0.5rem;
+}
+
+.crock-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crock-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crock-form-group label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--crock-text-light);
+}
+
+.crock-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--crock-border);
+  border-radius: var(--crock-radius-sm);
+  font-size: 0.875rem;
+  background-color: var(--crock-bg-light);
+  color: var(--crock-text);
+  transition: border-color var(--crock-transition);
+}
+
+.crock-input:focus {
+  outline: none;
+  border-color: var(--crock-primary);
+  box-shadow: 0 0 0 2px var(--crock-primary-light);
+}
+
+.crock-submit-button {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--crock-primary);
+  color: white;
+  border: none;
+  border-radius: var(--crock-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--crock-transition);
+}
+
+.crock-submit-button:hover {
+  background-color: var(--crock-primary-dark);
+}
+
+/* Input container */
+.crock-input-container {
+  padding: 0.75rem;
+  background-color: var(--crock-bg);
+  border-top: 1px solid var(--crock-border);
+}
+
+.crock-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--crock-bg-light);
+  border: 1px solid var(--crock-border);
+  border-radius: 1.5rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+  transition: border-color var(--crock-transition);
+}
+
+.crock-input-wrapper:focus-within {
+  border-color: var(--crock-primary);
+  box-shadow: 0 0 0 2px var(--crock-primary-light);
+}
+
+.crock-message-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: var(--crock-text);
+  padding: 0.5rem 0;
+}
+
+.crock-message-input:focus {
+  outline: none;
+}
+
+.crock-message-input::placeholder {
+  color: var(--crock-text-light);
+}
+
+.crock-send-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--crock-primary);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--crock-transition);
+}
+
+.crock-send-button:hover:not(:disabled) {
+  background-color: var(--crock-primary-dark);
+}
+
+.crock-send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.crock-footer {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--crock-text-light);
+  background-color: var(--crock-bg);
+  border-top: 1px solid var(--crock-border);
+}
+
+.crock-footer a {
+  color: var(--crock-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.crock-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 640px) {
+  .crock-chat-window:not(.crock-mobile) {
+    width: calc(100vw - 3rem);
+    right: 0;
+  }
+}
+
+@media (max-height: 640px) {
+  .crock-chat-window:not(.crock-mobile) {
+    height: calc(100vh - 6rem);
+  }
+}
+
+/* Animations */
+.ml-1 {
+  margin-left: 0.25rem;
+}

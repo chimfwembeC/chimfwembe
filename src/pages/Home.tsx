@@ -6,19 +6,13 @@ import {
   Download,
   ComputerIcon,
 } from "lucide-react";
-// import ProjectCard from '../components/ProjectCard';
-// import SkillCard from '../components/SkillCard';
-import ExperienceCard from "../components/ExperienceCard";
-// import DeveloperImage from '../components/assets/images/developer.png';
-// import CV from '../components/assets/docs/chimfwembe Kangwa cv.pdf';
+
 import ProjectAnimation from "../components/ProjectAnimation";
 import SkillAnimation from "../components/SkillAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
-// import { ReadAlong } from '../components/ReadAlong';
 import Hero from "../components/Hero";
 import FavouriteSection from "../components/FavouriteSection";
 import { projectData } from "../data/Projects";
-import AnimatedShowcase from "../components/AnimatedShowcase";
 import FloatingBubbles from "../components/FloatingBubbles";
 import ExprienceAnimation from "../components/ExprienceAnimation";
 

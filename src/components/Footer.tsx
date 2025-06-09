@@ -10,7 +10,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Logo from "./assets/icons/favicon-32x32.png";
+import DeveloperImage from '../components/assets/images/crock-suit-about.png';
+
 
 const navigation = {
   main: [
@@ -47,7 +48,7 @@ export default function Footer() {
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
                 {/* <Code2 className="h-8 w-8 text-indigo-600" /> */}
-                <img src={Logo} alt="" />
+                <img src={DeveloperImage} className="h-auto w-8" alt="" />
                 <span className="hidden md:block ml-2 text-xl font-bold gradient-text">
                   Chimfwembe Kangwa
                 </span>

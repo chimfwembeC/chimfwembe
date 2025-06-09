@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Menu, X, ChevronRight } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
+import DeveloperImage from '../components/assets/images/crock-suit-about.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,21 +27,21 @@ export default function Navbar() {
   const navItems = [
     { name: "About", path: "/about" },
     { name: "Experience", path: "/experience" },
-    { name: "Projects", path: "/projects" },
-    { name: "Skills", path: "/skills" },
+    { name: "My Portifolio", path: "/portifolio" },
+    { name: "Services", path: "/services" },
     { name: "Resume", path: "/resume" },
     { name: "Contact", path: "/contact" },
   ]
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "py-1" : "py-3"}`}>
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`fixed w-full z-50 transition-all duration-300`}>
+      <div className="">
         <motion.div
           className={`${
             scrolled
-              ? "bg-gray-900/80 shadow-lg shadow-purple-500/10"
-              : "bg-gradient-to-b from-gray-900/90 to-purple-900/70"
-          } backdrop-blur-md rounded-xl px-4 border border-purple-500/10`}
+              ? "bg-gray-900/80 shadow-lg shadow-purple-500/10 backdrop-blur-md border-b-2 border-purple-800"
+              : ""
+          } mx-auto px-4 sm:px-6 lg:px-8 transitions-all duration-300`}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -48,14 +49,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo and Name */}
             <Link to="/" className="flex items-center group">
-              <div className="relative h-9 w-9 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 p-0.5">
+              {/* <div className="relative h-9 w-9 overflow-hidden rounded-lg p-0.5">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 opacity-80"></div>
                 <img
-                  src="/favicon-32x32.png"
+                  src={DeveloperImage}
                   alt="Logo"
                   className="relative h-full w-full object-cover rounded-md transition-transform duration-300 group-hover:scale-110"
                 />
-              </div>
+              </div> */}
               <motion.span
                 className="hidden md:block ml-3 text-xl font-bold bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent"
                 initial={{ opacity: 0, x: -10 }}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import DeveloperImage from "/assets/imgs/about-me.jpeg"; // Replace with actual image path
+import DeveloperImage from '../components/assets/images/crock-suit-about.png';
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -20,24 +20,28 @@ export default function About() {
                 About Me
               </span>
             </motion.h1>
-
             <div className="prose prose-lg text-gray-300 max-w-none">
               <p className="mb-4">
-                Hello! I'm Chimfwembe Kangwa, a passionate Full Stack Developer
-                with experience in building scalable, high-performing web
-                applications. I specialize in Laravel, React, and Vue.js.
+                Hello! I'm <strong>Chimfwembe Kangwa</strong>, a dedicated Full Stack Developer with hands-on experience in building scalable, high-performance web applications. I specialize in <em>Laravel, React, Vue.js</em>, and bring strong skills in both frontend and backend development.
               </p>
+
               <p className="mb-4">
-                I've worked on quiz systems and results platforms. At Kamstar.tech,
-                I led teams and optimized project performance. My internships
-                deepened my skills in database management and testing.
+                Currently, I work remotely as a full-stack developer at Kamstar.tech, leading development efforts using Laravel, React, Inertia.js, and Vue.js. I have successfully delivered key features and optimizations that improve application performance and user experience.
               </p>
+
+              <p className="mb-4">
+                Throughout my internships and projects, I have gained practical experience in database management, system testing, and collaborative team workflows. Notable projects include a Quiz Management System and a real-time Results Verification System.
+              </p>
+
+              <p className="mb-4">
+                I am passionate about expanding my technical expertise, currently learning Flutter and Swift for mobile development. Outside of coding, I enjoy digital art, reading technology and self-development books, and gaming.
+              </p>
+
               <p>
-                I'm also exploring Flutter and Swift, and enjoy digital art,
-                self-development books, and gaming. I'm committed to growing in
-                tech and contributing to meaningful ICT solutions.
+                Committed to continuous growth, I strive to contribute innovative and meaningful solutions within the ICT sector.
               </p>
             </div>
+
 
             {/* Social Links */}
             <motion.div className="flex gap-6 mt-6">
@@ -74,11 +78,11 @@ export default function About() {
           {/* Image Column */}
           <div className="order-1 lg:order-2">
             <div className="relative">
-              {/* <img
+              <img
                 src={DeveloperImage}
                 alt="Developer"
-                className="w-full h-full object-cover"
-              /> */}
+                className="w-full lg:w-full h-auto lg:h-full object-cover"
+              />
             </div>
           </div>
         </div>

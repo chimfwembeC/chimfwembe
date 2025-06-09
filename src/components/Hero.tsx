@@ -20,6 +20,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import FloatingBubbles from "./FloatingBubbles"
 import ParticleText from "./ParticleText"
 import GitHubCalendar from "./GitHubCalendar"
+import DeveloperImage from '../components/assets/images/crock-suit-about.png';
 
 export default function Hero() {
   const { scrollYProgress } = useScroll()
@@ -51,7 +52,7 @@ export default function Hero() {
       {floatingIcons.map(({ Icon, color }, index) => (
         <motion.div
           key={index}
-          className="absolute z-[1]"
+          className="absolute z-[100]"
           animate={{
             y: [0, -15, 0],
             x: [0, 10, 0],
@@ -134,7 +135,7 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6 relative z-10">
         {/* Particle Text Name */}
-        <div className="w-full h-24 md:h-32">
+        <div className="hidden lg:block w-full h-24 md:h-32">
           <ParticleText
             text="Chimfwembe Kangwa"
             className="w-full h-full"
@@ -144,8 +145,14 @@ export default function Hero() {
           />
         </div>
 
+        {/* Mobile Animated Text - Name */}
+        <div className="block lg:hidden text-center mb-2">
+          <h1 className="text-2xl font-extrabold bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
+            Chimfwembe Kangwa
+          </h1>
+        </div>
         {/* Particle Text Career */}
-        <div className="w-full h-16 md:h-20 mb-4">
+        <div className="w-full hidden lg:block h-16 md:h-20 mb-4">
           <ParticleText
             text="IT Professional & Full Stack Developer"
             className="w-full h-full"
@@ -153,6 +160,13 @@ export default function Hero() {
             particleSize={2.5}
             particleSpacing={5}
           />
+        </div>
+
+        {/* Mobile Animated Text - Title */}
+        <div className="block lg:hidden text-center">
+          <h2 className="text-lg font-semibold bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400">
+            IT Professional & Full Stack Developer
+          </h2>
         </div>
 
         {/* Call-to-Action Button */}
@@ -240,6 +254,13 @@ export default function Hero() {
           )}
         </AnimatePresence>
 
+        <div className="relative">
+          <img
+            src={DeveloperImage}
+            alt="Developer"
+            className="w-full lg:w-full h-auto lg:h-full object-cover"
+          />
+        </div>
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
