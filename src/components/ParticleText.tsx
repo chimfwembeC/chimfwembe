@@ -38,19 +38,19 @@ export default function ParticleText({
   const [isMobile, setIsMobile] = useState(false)
 
   // Check if device is mobile
-  useEffect(() => {
-    if (!canvasRef.current || !containerRef.current) return
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+  // useEffect(() => {
+  //   if (!canvasRef.current || !containerRef.current) return
+  //   const checkMobile = () => {
+  //     setIsMobile(window.innerWidth < 768)
+  //   }
     
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
+  //   checkMobile()
+  //   window.addEventListener("resize", checkMobile)
     
-    return () => {
-      window.removeEventListener("resize", checkMobile)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener("resize", checkMobile)
+  //   }
+  // }, [])
 
   // Create particles from text
   useEffect(() => {

@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import { Send, User, Bot, MessageCircle, X, ExternalLink } from "lucide-react";
 import "./crockChat.css";
+import fs from 'fs';
+import path from 'path';
 
 // Types
 interface CrockChatProps {
@@ -38,6 +40,13 @@ interface LeadInfo {
   submittedAt: string;
 }
 
+interface Window {
+  CrockChat?: {
+    open: () => void;
+    close: () => void;
+    sendMessage: (msg: string) => void;
+  };
+}
 // Main Component
 const CrockChat: React.FC<CrockChatProps> = ({
   apiKey,
@@ -72,6 +81,7 @@ const CrockChat: React.FC<CrockChatProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatMessageUrl = `https://n8n.yourserver.com/webhook/chat/${widgetId}`;
   const leadSubmissionUrl = `https://n8n.yourserver.com/webhook/leads/${widgetId}`;
+  const mistralApiUrl = 'https://api.mistral.ai/v1/chat';
   
   // Debug logger
   const log = useCallback((message: string, data?: any) => {
@@ -176,108 +186,75 @@ const CrockChat: React.FC<CrockChatProps> = ({
     }, typingDelay);
   }, [log, onMessage]);
 
+  // Function to save chats to JSON files
+  const saveChatToFile = (sessionId, messages) => {
+    const filePath = path.join(__dirname, `chat_${sessionId}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(messages, null, 2));
+    console.log(`Chat saved to ${filePath}`);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
-    // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       text: inputValue,
-      sender: "user",
+      sender: 'user',
       timestamp: new Date(),
-      type: "text"
+      type: 'text',
     };
-    
-    setMessages(prev => [...prev, userMessage]);
-    setInputValue("");
+
+    setMessages((prev) => [...prev, userMessage]);
+    setInputValue('');
     setIsLoading(true);
-    
+
     if (onMessage) onMessage(userMessage);
-    log("Sent user message", userMessage);
+    log('Sent user message', userMessage);
 
     try {
-      // Send message to n8n webhook
-      const response = await fetch(chatMessageUrl, {
-        method: "POST",
+      const response = await fetch(mistralApiUrl, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "X-API-Key": apiKey
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           message: inputValue,
           sessionId: sessionId,
           timestamp: new Date().toISOString(),
-          leadInfo: leadInfo
-        })
+        }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        throw new Error('Failed to send message');
       }
 
-      // Get response from n8n
       const data = await response.json();
-      
-      // Check if we should ask for lead info
-      if (!leadInfo && !showLeadForm && messages.length >= 2 && data.collectLead) {
-        setShowLeadForm(true);
-        
-        // Add lead collection message
-        const leadMessage: Message = {
-          id: Date.now().toString(),
-          text: data.leadPrompt || "I'd be happy to help you further. Could you please share your contact information?",
-          sender: "bot",
-          timestamp: new Date(),
-          type: "text"
-        };
-        
-        simulateTyping(leadMessage.text, (message) => {
-          setMessages(prev => [...prev, message]);
+
+      if (data.response) {
+        simulateTyping(data.response, (message) => {
+          setMessages((prev) => [...prev, message]);
         });
-      } else {
-        // Process bot response
-        if (data.response) {
-          // Check if response contains buttons or quick replies
-          if (data.responseType === "buttons" && Array.isArray(data.options)) {
-            simulateTyping(data.response, (message) => {
-              message.type = "buttons";
-              message.options = data.options;
-              setMessages(prev => [...prev, message]);
-            });
-          } else if (data.responseType === "quickReplies" && Array.isArray(data.options)) {
-            simulateTyping(data.response, (message) => {
-              message.type = "quickReplies";
-              message.options = data.options;
-              setMessages(prev => [...prev, message]);
-            });
-          } else {
-            // Regular text message
-            simulateTyping(data.response, (message) => {
-              setMessages(prev => [...prev, message]);
-            });
-          }
-        }
       }
-      
-      // Increment unread count if chat is closed
+
+      saveChatToFile(sessionId, [...messages, userMessage]);
+
       if (!isOpen) {
-        setUnreadCount(prev => prev + 1);
+        setUnreadCount((prev) => prev + 1);
       }
     } catch (error) {
-      log("Error sending message", error);
-      
-      // Add error message
+      log('Error sending message', error);
+
       const errorMessage: Message = {
         id: Date.now().toString(),
-        text: "Sorry, I couldn't process your request. Please try again later.",
-        sender: "bot",
+        text: 'Sorry, I couldn\'t process your request. Please try again later.',
+        sender: 'bot',
         timestamp: new Date(),
-        type: "text"
+        type: 'text',
       };
-      
-      setMessages(prev => [...prev, errorMessage]);
+
+      setMessages((prev) => [...prev, errorMessage]);
       if (onMessage) onMessage(errorMessage);
     } finally {
       setIsLoading(false);
@@ -402,7 +379,7 @@ const CrockChat: React.FC<CrockChatProps> = ({
 
       {/* Chat window */}
       {isOpen && (
-        <div className={`crock-chat-window ${isMobile ? 'crock-mobile' : ''}`}>
+        <div className={`crock-chat-window h-[600px] ${isMobile ? 'crock-mobile' : ''}`}>
           {/* Header */}
           <div className="crock-chat-header">
             <div className="crock-chat-header-title">
@@ -552,7 +529,7 @@ const CrockChat: React.FC<CrockChatProps> = ({
                   onChange={(e) => setInputValue(e.target.value)}
                   disabled={isLoading || isTyping}
                   placeholder="Type a message..."
-                  className="crock-message-input"
+                  className="crock-message-input bg-gray-700 border-none outline-none ring-none"
                 />
                 <button 
                   type="submit" 
@@ -580,4 +557,28 @@ const CrockChat: React.FC<CrockChatProps> = ({
 function initCrockChat() {
   // Create container if it doesn't exist
   let container = document.getElementById('crock-chat-container');
-  if (!
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'crock-chat-container';
+    document.body.appendChild(container);
+  }
+
+  const root = createRoot(container);
+  root.render(
+    <CrockChat 
+      apiKey="YOUR_API_KEY"
+      widgetId="YOUR_WIDGET_ID"
+      // Optional props
+      theme="auto"
+      logoUrl="https://yourdomain.com/logo.png"
+      debug={true}
+      onOpen={() => console.log('Chat opened')}
+      onClose={() => console.log('Chat closed')}
+      onMessage={(msg) => console.log('New message:', msg)}
+      onLeadSubmit={(lead) => console.log('Lead submitted:', lead)}
+    />
+  );
+}
+
+
+export default CrockChat;

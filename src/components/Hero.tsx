@@ -135,7 +135,7 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6 relative z-10">
         {/* Particle Text Name */}
-        <div className="hidden lg:block w-full h-24 md:h-32">
+        {/* <div className="hidden lg:block w-full h-24 md:h-32">
           <ParticleText
             text="Chimfwembe Kangwa"
             className="w-full h-full"
@@ -143,7 +143,7 @@ export default function Hero() {
             particleSize={3}
             particleSpacing={4}
           />
-        </div>
+        </div> */}
 
         {/* Mobile Animated Text - Name */}
         <div className="block lg:hidden text-center mb-2">
@@ -152,7 +152,7 @@ export default function Hero() {
           </h1>
         </div>
         {/* Particle Text Career */}
-        <div className="w-full hidden lg:block h-16 md:h-20 mb-4">
+        {/* <div className="w-full hidden lg:block h-16 md:h-20 mb-4">
           <ParticleText
             text="IT Professional & Full Stack Developer"
             className="w-full h-full"
@@ -160,7 +160,7 @@ export default function Hero() {
             particleSize={2.5}
             particleSpacing={5}
           />
-        </div>
+        </div> */}
 
         {/* Mobile Animated Text - Title */}
         <div className="block lg:hidden text-center">

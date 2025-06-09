@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Services from './pages/Service';
 import PricingSheet from './components/PricingSheet';
+import CrockChat from './components/CrockChat/CrockChat';
 
 
 function App() {
@@ -27,6 +28,17 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />      
+      <CrockChat 
+        apiKey="GYfEQwkKayDBiRrOiFuWUXEORd0tE61t" 
+        widgetId="your-widget-id" 
+        botName="Crock AI Assistant" 
+        theme="auto" 
+        debug={true} 
+        onOpen={() => console.log('Chat opened')} 
+        onClose={() => console.log('Chat closed')} 
+        onMessage={(message) => console.log('Message received:', message)} 
+        onLeadSubmit={(leadInfo) => console.log('Lead submitted:', leadInfo)} 
+      />
     </div>
   );
 }

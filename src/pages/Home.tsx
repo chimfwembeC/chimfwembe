@@ -82,8 +82,8 @@ export default function Home() {
       </section> */}
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-8">
-        <div className="max-w-7xl mx-auto">
+      <section id="projects" className="py-20">
+        <div className="max-w-full lg:max-w-7xl mx-auto">
           <ProjectAnimation />
         </div>
       </section>

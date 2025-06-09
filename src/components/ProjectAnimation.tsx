@@ -71,21 +71,20 @@ export default function ProjectAnimation() {
     const row2X = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     return (
-        // <section className="w-full py-24 bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
         <section className="w-full">
             <div className="px-4">
-            <motion.h1
-                className="text-center font-semibold text-indigo-600 mb-4"                            
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}                          
-            >
-                <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
-                My Projects
-                </span>
-            </motion.h1>    
+                <motion.h1
+                    className="text-center font-semibold text-indigo-600 mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+                        My Projects
+                    </span>
+                </motion.h1>
 
-            {/* <FloatingBubbles /> */}
+                {/* <FloatingBubbles /> */}
 
                 <div className="w-full lg:w-[1000px] mx-auto overflow-hidden">
                     <div ref={containerRef} className="mx-auto">
@@ -100,9 +99,9 @@ export default function ProjectAnimation() {
                                     {[...firstRow, ...firstRow].map((project, index) => (
                                         <div
                                             key={index}
-                                            className="flex-none w-24 lg:w-64  border-2 border-purple-500 rounded-2xl bg-gray-100/20"
+                                            className="flex-none w-24 lg:w-64  border-2 border-purple-500 rounded-xl bg-gray-100/20"
                                         >
-                                            <div className="group relative overflow-hidden rounded-2xl">
+                                            <div className="group relative overflow-hidden rounded-xl">
                                                 <div className="aspect-[4/4] overflow-hidden">
                                                     <img
                                                         src={project.image}
@@ -126,9 +125,9 @@ export default function ProjectAnimation() {
                                     {[...secondRow, ...secondRow].map((project, index) => (
                                         <div
                                             key={index}
-                                            className="flex-none w-24 lg:w-64 border-2 border-purple-500 rounded-2xl bg-gray-100/20"
+                                            className="flex-none w-24 lg:w-64 border-2 border-purple-500 rounded-lg bg-gray-100/20"
                                         >
-                                            <div className="group relative overflow-hidden rounded-2xl">
+                                            <div className="group relative overflow-hidden rounded-lg">
                                                 <div className="aspect-[4/4] overflow-hidden">
                                                     <img
                                                         src={project.image}
