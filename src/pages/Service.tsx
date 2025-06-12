@@ -13,9 +13,10 @@ import {
   Layers,
   Terminal,
 } from "lucide-react";
+import FloatingBubbles from "../components/FloatingBubbles";
 
 const serviceCategories = [
-    { 
+  {
     title: "Frontend Development",
     Icon: Globe,
     price: "From ZMW 4,000",
@@ -151,6 +152,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
+        <FloatingBubbles />
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -193,7 +195,7 @@ export default function Services() {
           ))}
         </motion.div>
 
-        
+
       </div>
     </div>
   );

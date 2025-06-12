@@ -1,6 +1,7 @@
 import React from "react";
 import ExperienceCard from "../components/ExperienceCard";
 import { motion } from "framer-motion";
+import FloatingBubbles from "../components/FloatingBubbles";
 
 const experiences = [
   {
@@ -60,6 +61,7 @@ export default function Experience() {
       id="experience"
       className="py-20 px-4 bg-gradient-to-br from-gray-900 to-purple-900 "
     >
+      <FloatingBubbles />
       <div className="max-w-7xl mx-auto">
         <motion.h1
           className="text-center font-semibold text-indigo-600 mb-4"

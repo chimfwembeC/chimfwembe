@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { motion } from "framer-motion";
+import FloatingBubbles from "../components/FloatingBubbles";
 
 const contactInfo = [
   {
@@ -28,6 +29,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
+        <FloatingBubbles />
         <motion.h1
           className="text-center font-semibold text-indigo-600 mb-6"
           initial={{ opacity: 0, y: 20 }}

@@ -210,7 +210,7 @@ export default function CustomChatbot() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            className="absolute bottom-16 right-0 w-80 h-[450px] bg-gradient-to-br from-purple-900 to-indigo-800 rounded-lg shadow-xl flex flex-col overflow-hidden"
+            className="absolute bottom-16 right-0 w-80 h-[400px] bg-gradient-to-br from-purple-900 to-indigo-800 rounded-lg shadow-xl flex flex-col overflow-hidden"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}

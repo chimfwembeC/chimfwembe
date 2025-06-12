@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 import { projectData } from "../data/Projects";
 import { Work, User, Briefcase, Star } from "lucide-react"; // Import icons
+import FloatingBubbles from "../components/FloatingBubbles";
 
 const projects = projectData;
 
@@ -41,7 +42,9 @@ export default function Portifolio() {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 to-purple-900">
-      
+
+      <FloatingBubbles />
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -57,7 +60,7 @@ export default function Portifolio() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-2xl lg:text-5xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
-            My Portifolio
+              My Portifolio
             </span>
           </motion.h1>
 

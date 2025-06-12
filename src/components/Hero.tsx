@@ -134,8 +134,17 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6 relative z-10">
+
+         {/* Developer Image */}
+        <div className="relative -z-[100] w-full flex justify-center lg:absolute lg:bottom-0 lg:left-0 lg:w-[400px] z-10">
+          <img
+            src={DeveloperImage}
+            alt="Developer"
+            className="w-48 md:w-72 lg:w-full h-auto object-contain drop-shadow-lg"
+          />
+        </div>
         {/* Particle Text Name */}
-        {/* <div className="hidden lg:block w-full h-24 md:h-32">
+        <div className="hidden lg:block w-full h-24 md:h-32">
           <ParticleText
             text="Chimfwembe Kangwa"
             className="w-full h-full"
@@ -143,16 +152,16 @@ export default function Hero() {
             particleSize={3}
             particleSpacing={4}
           />
-        </div> */}
+        </div>
 
         {/* Mobile Animated Text - Name */}
         <div className="block lg:hidden text-center mb-2">
-          <h1 className="text-2xl font-extrabold bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
+          <h1 className="text-4xl font-extrabold bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
             Chimfwembe Kangwa
           </h1>
         </div>
         {/* Particle Text Career */}
-        {/* <div className="w-full hidden lg:block h-16 md:h-20 mb-4">
+        <div className="w-full hidden lg:block h-16 md:h-20 mb-4">
           <ParticleText
             text="IT Professional & Full Stack Developer"
             className="w-full h-full"
@@ -160,11 +169,11 @@ export default function Hero() {
             particleSize={2.5}
             particleSpacing={5}
           />
-        </div> */}
+        </div>
 
         {/* Mobile Animated Text - Title */}
         <div className="block lg:hidden text-center">
-          <h2 className="text-lg font-semibold bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400">
+          <h2 className="text-md font-semibold bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400">
             IT Professional & Full Stack Developer
           </h2>
         </div>
@@ -254,13 +263,6 @@ export default function Hero() {
           )}
         </AnimatePresence>
 
-        <div className="relative">
-          <img
-            src={DeveloperImage}
-            alt="Developer"
-            className="w-full lg:w-full h-auto lg:h-full object-cover"
-          />
-        </div>
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
@@ -272,8 +274,6 @@ export default function Hero() {
             ease: "easeInOut",
           }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.6 }}
         >
           <ChevronDown className="h-6 w-6 text-purple-400" />
         </motion.div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Download, GraduationCap, Award, Star } from "lucide-react";
 import CV from "../components/assets/docs/chimfwembe_Kangwa_cv.pdf";
+import FloatingBubbles from "../components/FloatingBubbles";
 
 const education = [
   {
@@ -36,11 +37,9 @@ const certifications = [
 export default function Resume() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
       className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4"
     >
+      <FloatingBubbles />
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
@@ -151,14 +150,14 @@ export default function Resume() {
                 }}
                 className="bg-gradient-to-br group from-gray-500/50 to-purple-900/90 border-2 border-purple-500 rounded-2xl overflow-hidden shadow-xl p-6"
               >
-                {/* <div className="absolute p-2 h-12 w-12 bg-purple-500 rounded-full -top-6 -right-4 flex justify-center items-center">
+                <div className="absolute p-2 h-12 w-12 bg-purple-500 rounded-full -top-6 -right-4 flex justify-center items-center">
                   <Star className="h-16 w-16 text-yellow-500" />
-                </div> */}
+                </div>
 
                 <h3 className="text-lg lg:text-xl bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent mb-2">
                   {cert.name}
                 </h3>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 overflow-auto w-full">
                   {cert.issuer?.map((issue) => (
                     <p className="text-purple-400 border-2 border-purple-500 rounded-2xl p-1 px-2 mb-1">
                       {issue}

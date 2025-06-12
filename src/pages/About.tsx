@@ -2,11 +2,13 @@ import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import DeveloperImage from '../components/assets/images/crock-suit-about.png';
 import { motion } from "framer-motion";
+import FloatingBubbles from "../components/FloatingBubbles";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
+        <FloatingBubbles />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Column */}
           <div className="order-2 lg:order-1">
@@ -75,6 +77,7 @@ export default function About() {
             </motion.div>
           </div>
 
+          <FloatingBubbles />
           {/* Image Column */}
           <div className="order-1 lg:order-2">
             <div className="relative">
