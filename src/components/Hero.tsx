@@ -136,7 +136,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6 relative z-10">
 
          {/* Developer Image */}
-        <div className="relative -z-[100] w-full flex justify-center lg:absolute lg:bottom-0 lg:left-0 lg:w-[400px] z-10">
+        <div className="relative -z-[100] w-full flex justify-center lg:absolute lg:bottom-0 lg:left-0 lg:w-[400px]">
           <img
             src={DeveloperImage}
             alt="Developer"

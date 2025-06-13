@@ -40,7 +40,7 @@ export default function Navbar() {
           className={`${
             scrolled
               ? "bg-gray-900/80 shadow-lg shadow-purple-500/10 backdrop-blur-md border-b-2 border-purple-800"
-              : ""
+              : "border-none"
           } mx-auto px-4 sm:px-6 lg:px-8 transitions-all duration-300`}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
