@@ -366,7 +366,11 @@ const CrockChat: React.FC<CrockChatProps> = ({
         {isOpen ? (
           <X className="crock-icon" />
         ) : (
-          <MessageCircle className="crock-icon" />
+          <>
+          {/* <MessageCircle className="crock-icon" /> */}
+          <img src="/assets/crock-suit.png" className="w-8 h-auto" alt="" />
+          </>
+          
         )}
         
         {/* Unread badge */}
@@ -379,7 +383,7 @@ const CrockChat: React.FC<CrockChatProps> = ({
 
       {/* Chat window */}
       {isOpen && (
-        <div className={`crock-chat-window h-[600px] ${isMobile ? 'crock-mobile' : ''}`}>
+        <div className={`crock-chat-window h-[500px] ${isMobile ? 'crock-mobile' : ''}`}>
           {/* Header */}
           <div className="crock-chat-header">
             <div className="crock-chat-header-title">
