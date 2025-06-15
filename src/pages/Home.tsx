@@ -67,7 +67,7 @@ const skillCategories = [
 
 export default function Home() {
   return (
-    <div className="w-full relative bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
+    <div className="w-full relative overflow-hidden">
       
       {/* Hero Section */}
       <Hero />

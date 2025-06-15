@@ -40,7 +40,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-to-br from-gray-900 to-purple-900 border-t-2 border-purple-500 rounded-t-2xl text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand and Description */}

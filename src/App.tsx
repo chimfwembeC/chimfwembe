@@ -11,15 +11,12 @@ import Footer from './components/Footer';
 import Services from './pages/Service';
 import PricingSheet from './components/PricingSheet';
 import CrockChat from './components/CrockChat/CrockChat';
-import MouseBackground from './components/MouseBackground';
-import FloatingBubbles from './components/FloatingBubbles';
 
 
 function App() {
   return (
-    <div className="h-auto">
+    <div className="h-auto bg-gradient-to-br from-gray-900 to-purple-900 ">
       <Navbar />
-      {/* <MouseBackground /> */}
   
       <PricingSheet />
       <Routes>

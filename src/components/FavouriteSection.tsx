@@ -131,7 +131,7 @@ export default function FavouriteSection() {
                   }}
                   className={`
                     bg-gradient-to-br from-gray-800/80 to-purple-900/80 
-                    border border-purple-500/50 rounded-xl overflow-hidden 
+                    border-2 border-purple-500 rounded-xl overflow-hidden 
                     shadow-lg backdrop-blur-sm flex flex-col
                     ${isMobile ? "absolute left-0 right-0 mx-4 cursor-pointer" : "relative"}
                     h-[280px] md:h-full

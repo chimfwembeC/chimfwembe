@@ -168,7 +168,7 @@ export default function GitHubCalendar({ username, className = "" }: GitHubCalen
 
   return (
     <motion.div
-      className={`bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-purple-500/30 ${className}`}
+      className={`bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border-2 border-purple-500 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
