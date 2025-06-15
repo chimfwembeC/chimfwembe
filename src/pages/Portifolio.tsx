@@ -41,7 +41,7 @@ export default function Portifolio() {
       : projects.filter((project) => project.type === selectedType);
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 to-purple-900">
+    <div className="min-h-screen relative pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 to-purple-900">
 
       <FloatingBubbles />
 

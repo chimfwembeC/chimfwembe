@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Calendar, Building2, Locate } from 'lucide-react';
+import FloatingBubbles from './FloatingBubbles';
 
 interface ExperienceCardProps {
   title: string;
@@ -56,6 +57,8 @@ export default function ExperienceCard({
       viewport={{ once: true, amount: 0.5 }}
       variants={cardVariants}
     >
+     
+
       {/* Timeline line with parallax effect */}
       <motion.div
         style={{ y: lineY }}
@@ -68,7 +71,8 @@ export default function ExperienceCard({
         className="absolute left-[-8px] -top-8 w-6 h-6 rounded-full bg-indigo-600 border-4 border-white"
       />
 
-      <div className="border border-purple-500 rounded-2xl bg-gray-100/20 p-6 shadow-md ml-8">
+      <div className="relative border-2 border-purple-500 rounded-2xl bg-gray-100/20 p-6 shadow-md ml-8">
+      <FloatingBubbles />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
           <h3 className="text-xl font-semibold text-gray-100">{title}</h3>
           <div className="flex items-center gap-2 text-gray-600 mt-2 sm:mt-0">

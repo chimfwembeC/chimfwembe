@@ -39,7 +39,7 @@ export default function Navbar() {
         <motion.div
           className={`${
             scrolled
-              ? "bg-gray-900/80 shadow-lg shadow-purple-500/10 backdrop-blur-md border-b-2 border-purple-800"
+              ? "bg-gray-900/80 rounded-b-2xl shadow-lg shadow-purple-500/10 backdrop-blur-md border-b-2 border-purple-800"
               : "border-none"
           } mx-auto px-4 sm:px-6 lg:px-8 transitions-all duration-300`}
           initial={{ opacity: 0, y: -20 }}
@@ -120,14 +120,14 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden px-4"
+            className="md:hidden px-2"
             initial={{ opacity: 0, height: 0, y: -10 }}
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="bg-gradient-to-b from-gray-900/95 to-purple-900/95 backdrop-blur-md rounded-xl shadow-lg border border-purple-500/20 mt-2 overflow-hidden"
+              className="bg-gradient-to-b rounded-2xl from-gray-900/95 to-purple-900/95 backdrop-blur-md shadow-lg border-2 border-purple-500 mt-2 overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
@@ -145,7 +145,7 @@ export default function Navbar() {
                     <Link
                       to={item.path}
                       className={`flex items-center justify-between px-4 py-3 ${
-                        index !== navItems.length - 1 ? "border-b border-purple-500/10" : ""
+                        index !== navItems.length - 1 ? "border-b border-purple-500/50" : ""
                       } ${
                         isActive
                           ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/20 text-white"

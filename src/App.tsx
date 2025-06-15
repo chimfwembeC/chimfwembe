@@ -11,12 +11,16 @@ import Footer from './components/Footer';
 import Services from './pages/Service';
 import PricingSheet from './components/PricingSheet';
 import CrockChat from './components/CrockChat/CrockChat';
+import MouseBackground from './components/MouseBackground';
+import FloatingBubbles from './components/FloatingBubbles';
 
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-auto">
       <Navbar />
+      {/* <MouseBackground /> */}
+  
       <PricingSheet />
       <Routes>
         <Route path="/" element={<Home />} />

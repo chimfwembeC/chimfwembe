@@ -6,7 +6,7 @@ import FloatingBubbles from "../components/FloatingBubbles";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
+    <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
         <FloatingBubbles />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

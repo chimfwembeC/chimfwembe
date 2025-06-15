@@ -59,7 +59,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-20 px-4 bg-gradient-to-br from-gray-900 to-purple-900 "
+      className="py-20 px-4 relative bg-gradient-to-br from-gray-900 to-purple-900 "
     >
       <FloatingBubbles />
       <div className="max-w-7xl mx-auto">

@@ -62,7 +62,7 @@ export default function AnimatedShowcase() {
     return (
         <div ref={containerRef} className="relative w-full min-h-screen bg-slate-900 overflow-hidden">
             {/* Particle Grid Background */}
-            <div className="absolute inset-0 overflow-hidden">
+            {/* <div className="absolute inset-0 overflow-hidden">
                 {particles.map((particle) => (
                     <motion.div
                         key={particle.id}
@@ -88,10 +88,10 @@ export default function AnimatedShowcase() {
                         }}
                     />
                 ))}
-            </div>
+            </div> */}
 
             {/* Cyberpunk Grid Lines */}
-            <div className="absolute inset-0 grid grid-cols-[repeat(20,1fr)] grid-rows-[repeat(20,1fr)] opacity-20">
+            {/* <div className="absolute inset-0 grid grid-cols-[repeat(20,1fr)] grid-rows-[repeat(20,1fr)] opacity-20">
                 {Array.from({ length: GRID_SIZE * 2 }).map((_, i) => (
                     <motion.div
                         key={i}
@@ -99,7 +99,7 @@ export default function AnimatedShowcase() {
                         style={{ opacity: backgroundOpacity }}
                     />
                 ))}
-            </div>
+            </div> */}
 
             {/* Main Content Container */}
             <motion.div
@@ -139,62 +139,6 @@ export default function AnimatedShowcase() {
                     </motion.div>
                 ))}
 
-                {/* Central Showcase Element */}
-                <motion.div
-                    className="relative z-10"
-                    // style={{ scale, rotate }}
-                    style={{ scale }}
-                >
-                    <motion.div
-                        className="grid grid-cols-2 gap-4 p-8"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    >
-                        {[1, 2, 3, 4].map((item) => (
-                            <motion.div
-                                key={item}
-                                className="w-56 h-56 bg-gradient-to-br from-slate-800/80 to-slate-900/80 
-                                         backdrop-blur-md rounded-lg p-6 border border-slate-700/50
-                                         hover:border-cyan-500/50 transition-colors duration-300
-                                         shadow-[0_0_15px_rgba(0,255,255,0.1)]"
-                                whileHover={{
-                                    scale: 1.05,
-                                    rotateX: 10,
-                                    rotateY: 10,
-                                    boxShadow: "0 0 30px rgba(0,255,255,0.2)",
-                                }}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 300,
-                                    damping: 20,
-                                    delay: item * 0.1,
-                                }}
-                            >
-                                <div className="h-full flex flex-col justify-between">
-                                    <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                                        Project {item}
-                                    </h3>
-                                    <p className="text-slate-400">
-                                        Interactive showcase with advanced animations and effects
-                                    </p>
-                                    <div className="flex justify-end">
-                                        <motion.button
-                                            className="px-4 py-2 rounded-md bg-cyan-500/10 text-cyan-400
-                                                     hover:bg-cyan-500/20 transition-colors duration-300"
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
-                                        >
-                                            Explore
-                                        </motion.button>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
             </motion.div>
 
             {/* Animated Gradient Overlays */}

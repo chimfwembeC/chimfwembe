@@ -71,7 +71,7 @@ export default function FavouriteSection() {
   }
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h1
           className="text-center font-semibold mb-12 md:mb-16"

@@ -15,6 +15,7 @@ import FavouriteSection from "../components/FavouriteSection";
 import { projectData } from "../data/Projects";
 import FloatingBubbles from "../components/FloatingBubbles";
 import ExprienceAnimation from "../components/ExprienceAnimation";
+import AnimatedShowcase from "../components/AnimatedShowcase";
 
 const CV = "../components/assets/docs/chimfwembe_Kangwa_cv.pdf";
 
@@ -66,7 +67,7 @@ const skillCategories = [
 
 export default function Home() {
   return (
-    <div className="w-full bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
+    <div className="w-full relative bg-gradient-to-br from-gray-900 to-purple-900 overflow-hidden">
       
       {/* Hero Section */}
       <Hero />
@@ -82,14 +83,14 @@ export default function Home() {
       </section> */}
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-12 lg:py-20">
         <div className="max-w-full lg:max-w-7xl mx-auto">
           <ProjectAnimation />
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="relative py-20">
+      <section id="skills" className="relative lg:py-20">
         <div className="overflow-hidden">
           <SkillAnimation />
         </div>

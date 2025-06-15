@@ -74,7 +74,7 @@ export default function ProjectAnimation() {
         <section className="w-full">
             <div className="px-4">
                 <motion.h1
-                    className="text-center font-semibold text-indigo-600 mb-4"
+                    className="text-center font-semibold text-indigo-600 mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}

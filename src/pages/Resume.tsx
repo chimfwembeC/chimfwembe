@@ -37,7 +37,7 @@ const certifications = [
 export default function Resume() {
   return (
     <motion.div
-      className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4"
+      className="min-h-screen relative bg-gradient-to-br from-gray-900 to-purple-900 pt-32 pb-20 px-4"
     >
       <FloatingBubbles />
       <div className="max-w-4xl mx-auto">

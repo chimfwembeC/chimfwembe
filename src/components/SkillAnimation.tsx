@@ -116,7 +116,7 @@ export default function SkillAnimation() {
     });
 
     return (
-        <section className="py-24 h-full">
+        <section className="lg:py-24 h-full">
             <div className="container mx-auto px-4">              
             <motion.h1
             className="text-center font-semibold text-indigo-600 mb-4"                            

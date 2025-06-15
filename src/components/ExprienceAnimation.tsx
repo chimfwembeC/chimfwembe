@@ -47,7 +47,7 @@ const experiences = [
 
 export default function ExprienceAnimation() {
   return (
-    <section id="experience" className="py-20 px-4">
+    <section id="experience" className="lg:py-20 px-4">
           <div className="max-w-7xl mx-auto px-4">
               <motion.h1
                 className="text-center font-semibold text-indigo-600 mb-6"                            
